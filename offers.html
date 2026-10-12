@@ -103,6 +103,11 @@
         color: var(--color-accent) !important;
         border-bottom: 2px solid var(--color-accent);
       }
+        #drawer-content nav a.active,
+        #drawer-content #mobile-home-toggle.active {
+          color: var(--color-accent) !important;
+          font-weight: 700;
+        }
 
       .dropdown-wrapper { position: relative; }
       .dropdown-menu {
@@ -1122,6 +1127,23 @@
         document.getElementById('home-dropdown-btn')?.classList.add('active');
         document.getElementById('home-dropdown-btn')?.parentElement?.classList.add('active');
       }
+
+      // Highlight active link in mobile drawer
+      document.querySelectorAll('#drawer-content nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (['', 'index.html'].includes(currentPath) && href === 'index.html')) {
+          link.classList.add('active', 'text-accent');
+          link.classList.remove('text-primary-text', 'text-secondary-text');
+        }
+      });
+      if (['index.html', 'home2.html', ''].includes(currentPath)) {
+        const mHome = document.getElementById('mobile-home-toggle');
+        if (mHome) {
+          mHome.classList.add('active', 'text-accent');
+          mHome.classList.remove('text-primary-text');
+        }
+      }
+
     </script>
   </body>
 </html>
