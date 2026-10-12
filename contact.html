@@ -219,7 +219,20 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
-      }
+        white-space: nowrap;
+        }
+        #main-footer .footer-contact-link {
+          color: #6B7280;
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: all 0.25s ease;
+        }
+        #main-footer .footer-contact-link:hover {
+          color: #22C55E;
+        }
+        html[data-theme='dark'] #main-footer .footer-contact-link {
+          color: #9CA3AF;
+        }
       #main-footer .footer-link::before {
         content: '›';
         color: #22C55E;
@@ -452,7 +465,7 @@
           </div>
           <a href="about.html" class="nav-link">About Us</a>
           <a href="shop.html" class="nav-link">Shop</a>
-          <a href="daily-deals.html" class="nav-link">Daily Deals</a>
+          <!-- <a href="daily-deals.html" class="nav-link">Daily Deals</a> -->
           <!-- <a href="best-sellers.html" class="nav-link">Best Sellers</a> -->
           <a href="fresh-picks.html" class="nav-link">Fresh Picks</a>
           <a href="new-arrivals.html" class="nav-link">New Arrivals</a>
@@ -700,8 +713,8 @@
       </section>
 
       <!-- ─── SECTION 4: STORE HOURS & LOCATIONS ─── -->
-      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
-        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+      <!-- <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border"> -->
+        <!-- <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
             <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Our Stores</span>
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Visit Us in Person</h2>
@@ -709,7 +722,7 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-            <!-- Store 1 -->
+           
             <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
               <div class="h-40 sm:h-52 overflow-hidden">
                   <img src="assets/home1.jpg" alt="Market Street Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
@@ -733,7 +746,7 @@
               </div>
             </div>
 
-            <!-- Store 2 -->
+            
             <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
               <div class="h-40 sm:h-52 overflow-hidden">
                   <img src="assets/c1.jpg" alt="Riverside Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
@@ -757,7 +770,7 @@
               </div>
             </div>
 
-            <!-- Store 3 -->
+        
             <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal sm:col-span-2 lg:col-span-1">
               <div class="h-40 sm:h-52 overflow-hidden">
                    <img src="assets/c2.jpg" alt="Midtown Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
@@ -781,8 +794,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </div> -->
+      <!-- </section> -->
 
       <!-- ─── SECTION 5: FIND US / MAP (replaced Response Promise) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
@@ -920,7 +933,7 @@
           </div>
           <a href="about.html" class="block text-primary-text font-semibold text-base py-2.5">About Us</a>
           <a href="shop.html" class="block text-primary-text font-semibold text-base py-2.5">Shop</a>
-          <a href="daily-deals.html" class="block text-primary-text font-semibold text-base py-2.5">Daily Deals</a>
+          <!-- <a href="daily-deals.html" class="block text-primary-text font-semibold text-base py-2.5">Daily Deals</a> -->
           <!-- <a href="best-sellers.html" class="block text-primary-text font-semibold text-base py-2.5">Best Sellers</a> -->
           <a href="fresh-picks.html" class="block text-primary-text font-semibold text-base py-2.5">Fresh Picks</a>
           <a href="new-arrivals.html" class="block text-primary-text font-semibold text-base py-2.5">New Arrivals</a>
@@ -965,24 +978,22 @@
               <a href="#" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
-          <div class="lg:col-span-2 lg:col-start-6">
+          <div class="lg:col-span-2 lg:col-start-5">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="space-y-3 list-none p-0 m-0">
               <li><a href="shop.html" class="footer-link">Shop</a></li>
-              <li><a href="daily-deals.html" class="footer-link">Daily Deals</a></li>
-              <!-- <li><a href="best-sellers.html" class="footer-link">Best Sellers</a></li> -->
+              <li><a href="offers.html" class="footer-link">Offers</a></li>
               <li><a href="delivery.html" class="footer-link">Delivery Info</a></li>
               <li><a href="about.html" class="footer-link">About Us</a></li>
             </ul>
           </div>
-          <div class="lg:col-span-2">
+          <div class="lg:col-span-3">
             <h4 class="footer-heading">Categories</h4>
             <ul class="space-y-3 list-none p-0 m-0">
               <li><a href="shop.html" class="footer-link">Fruits</a></li>
               <li><a href="shop.html" class="footer-link">Vegetables</a></li>
               <li><a href="shop.html" class="footer-link">Pantry Essentials</a></li>
               <li><a href="shop.html" class="footer-link">Bakery & Dairy</a></li>
-              <li><a href="shop.html" class="footer-link">Beverages</a></li>
             </ul>
           </div>
           <div class="lg:col-span-3 sm:col-span-2">
@@ -994,15 +1005,11 @@
               </li>
               <li class="footer-info-row">
                 <div class="footer-info-icon"><i class="fa-solid fa-phone"></i></div>
-                <a href="tel:+18005550199" class="footer-link" style="font-size:0.95rem;">+1 (800) 555-0199</a>
+                <a href="tel:+18005550199" class="footer-contact-link" style="font-size:0.95rem;">+1 (800) 555-0199</a>
               </li>
               <li class="footer-info-row">
                 <div class="footer-info-icon"><i class="fa-solid fa-envelope"></i></div>
-                <a href="mailto:hello@freshmart.com" class="footer-link" style="font-size:0.95rem;">hello@freshmart.com</a>
-              </li>
-              <li class="footer-info-row">
-                <div class="footer-info-icon"><i class="fa-regular fa-clock"></i></div>
-                <span>Daily: 7 AM – 10 PM</span>
+                <a href="mailto:hello@freshmart.com" class="footer-contact-link" style="font-size:0.95rem;">hello@freshmart.com</a>
               </li>
             </ul>
           </div>
