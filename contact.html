@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – FreshMart | Get in Touch With Our Team</title>
+    <meta name="description" content="Contact FreshMart — reach our team via phone, email, live chat, or visit our store. Fast replies, real humans, and support 7 days a week." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2322C55E'/%3E%3Cg transform='translate(12,12)' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 10 L12 4 L18 10'/%3E%3Cpath d='M8 10 V18 H16 V10'/%3E%3C/g%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            colors: { accent: '#22C55E', "accent-dark": '#16A34A', "accent-light": '#F0FDF4',
+              green: {
+                50: "#F0FDF4", 100: "#DCFCE7", 200: "#BBF7D0", 300: "#86EFAC",
+                400: "#4ADE80", 500: "#22C55E", 600: "#16A34A", 700: "#15803D",
+                800: "#166534", 900: "#14532D",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+      :root, html[data-theme='light'] {
+        --color-background: #FFFFFF;
+        --color-primary-text: #1F2937;
+        --color-secondary-text: #6B7280;
+        --color-accent: #22C55E;
+        --color-accent-dark: #16A34A;
+        --color-accent-light: #F0FDF4;
+        --color-border: #E5E7EB;
+        --color-hover: #F3F4F6;
+        --body-bg: #FFFFFF;
+        --body-text: #1F2937;
+      }
+      html[data-theme='dark'] {
+        --color-background: #0A0A0A;
+        --color-primary-text: #F9FAFB;
+        --color-secondary-text: #9CA3AF;
+        --color-accent: #22C55E;
+        --color-accent-dark: #16A34A;
+        --color-accent-light: #14532D;
+        --color-border: #1F2937;
+        --color-hover: #111827;
+        --body-bg: #0A0A0A;
+        --body-text: #F9FAFB;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--body-bg);
+        color: var(--body-text);
+        overflow-x: hidden;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .text-primary-text { color: var(--color-primary-text); }
+      .text-secondary-text { color: var(--color-secondary-text); }
+      .text-accent { color: var(--color-accent); }
+      .bg-background { background-color: var(--color-background); }
+      .bg-hover { background-color: var(--color-hover); }
+      .border-border { border-color: var(--color-border); }
+
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--body-bg); }
+      ::-webkit-scrollbar-thumb { background: #22C55E; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #16A34A; }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s;
+        padding: 0.5rem 0.55rem;
+        font-weight: 600;
+        font-size: 0.82rem;
+        color: var(--color-primary-text);
+        text-decoration: none;
+        white-space: nowrap;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .nav-link:hover { color: var(--color-accent) !important; }
+      .nav-link.active {
+        color: var(--color-accent) !important;
+        border-bottom: 2px solid var(--color-accent);
+      }
+
+      .dropdown-wrapper { position: relative; }
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        background-color: var(--color-background);
+        border: 1px solid var(--color-border);
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        min-width: 200px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.25s ease;
+        overflow: hidden;
+        padding: 0.4rem 0;
+      }
+      .dropdown-wrapper:hover .dropdown-menu,
+      .dropdown-wrapper:focus-within .dropdown-menu {
+        opacity: 1; visibility: visible; transform: translateY(0);
+      }
+      .dropdown-menu a {
+        display: block;
+        padding: 0.75rem 1.25rem;
+        color: var(--color-primary-text);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .dropdown-menu a:last-child { border-bottom: none; }
+      .dropdown-menu a:hover {
+        background-color: var(--color-hover);
+        color: var(--color-accent);
+        padding-left: 1.5rem;
+      }
+      .dropdown-wrapper.active .nav-link {
+        color: var(--color-accent) !important;
+        border-bottom: 2px solid var(--color-accent);
+      }
+
+      .logo-badge {
+        width: 48px; height: 48px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+      }
+      .logo-text {
+        font-family: "Playfair Display", serif;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      .logo-sub {
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-secondary-text);
+      }
+
+      .icon-btn {
+        width: 40px; height: 40px;
+        border-radius: 12px;
+        background-color: var(--color-hover);
+        border: 1px solid var(--color-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-secondary-text);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .icon-btn:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
+      #main-footer {
+        background-color: #FFFFFF;
+        color: #1F2937;
+        border-top: 1px solid #E5E7EB;
+      }
+      html[data-theme='dark'] #main-footer {
+        background-color: #0A0A0A;
+        color: #F9FAFB;
+        border-top: 1px solid #1F2937;
+      }
+      #main-footer .footer-heading {
+        color: #1F2937;
+        font-weight: 800;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.75rem;
+      }
+      html[data-theme='dark'] #main-footer .footer-heading { color: #F9FAFB; }
+      #main-footer .footer-link {
+        color: #6B7280;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      #main-footer .footer-link::before {
+        content: '›';
+        color: #22C55E;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+      #main-footer .footer-link:hover {
+        color: #22C55E;
+        padding-left: 4px;
+      }
+      #main-footer .footer-info-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        color: #6B7280;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      html[data-theme='dark'] #main-footer .footer-info-row { color: #9CA3AF; }
+      #main-footer .footer-info-icon {
+        width: 36px; height: 36px;
+        border-radius: 10px;
+        background-color: #F0FDF4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #22C55E;
+        font-size: 0.85rem;
+      }
+      #main-footer .social-btn {
+        width: 44px; height: 44px;
+        border-radius: 12px;
+        background-color: #F3F4F6;
+        border: 1px solid #E5E7EB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6B7280;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      html[data-theme='dark'] #main-footer .social-btn {
+        background-color: #111827;
+        border-color: #1F2937;
+        color: #9CA3AF;
+      }
+      #main-footer .social-btn:hover {
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: white;
+        transform: translateY(-3px);
+        border-color: transparent;
+      }
+      .footer-bottom {
+        border-top: 1px solid #E5E7EB;
+        padding: 1.5rem 0;
+      }
+      html[data-theme='dark'] .footer-bottom { border-top: 1px solid #1F2937; }
+      .footer-bottom a {
+        color: #6B7280;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.25s ease;
+      }
+      .footer-bottom a:hover { color: #22C55E; }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: white;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(34,197,94,0.35);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--color-accent);
+        border: 2px solid var(--color-accent);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-outline:hover {
+        background: var(--color-accent);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+      .animate-float { animation: float 5s ease-in-out infinite; }
+
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      .animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+
+      .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(34,197,94,0.15);
+        border-color: var(--color-accent) !important;
+      }
+
+      .cat-icon { transition: all 0.4s ease; }
+      .card-hover:hover .cat-icon {
+        transform: scale(1.1) rotate(-5deg);
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: white !important;
+      }
+      .card-hover:hover .cat-icon i { color: white !important; }
+
+      /* ── Contact channel card ── */
+      .contact-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(34,197,94,0.15);
+        border-color: var(--color-accent) !important;
+      }
+      .contact-card:hover .contact-icon {
+        transform: scale(1.1) rotate(-5deg);
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+      }
+      .contact-card:hover .contact-icon i { color: white !important; }
+      .contact-icon { transition: all 0.4s ease; }
+
+      /* ── Form input ── */
+      .form-input {
+        transition: all 0.25s ease;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+      }
+
+      /* ── Map container ── */
+      .map-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        border: 1px solid var(--color-border);
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+      @media (max-width: 640px) {
+        .map-container { height: 400px; border-radius: 1rem; }
+      }
+      @media (min-width: 1024px) {
+        .map-container { height: 550px; }
+      }
+      /* ── Final CTA background image (c3) ── */
+.final-cta-bg {
+  background-image: url('assets/c3.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: inherit;
+  z-index: 0;
+}
+.final-cta-bg > * {
+  position: relative;
+  z-index: 1;
+}
+    </style>
+  </head>
+  <body class="font-body antialiased flex flex-col min-h-screen">
+
+    <!-- ══════════ HEADER — SAME AS INDEX ══════════ -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border" id="main-header">
+      <nav class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-3 flex items-center justify-between h-[70px] sm:h-[80px]">
+        <a href="index.html" class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div class="logo-badge" style="width:40px;height:40px;font-size:1.1rem;">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="logo-text" style="font-size:1.25rem;">
+              <span class="text-primary-text">Fresh</span><span class="text-accent">Mart</span>
+            </span>
+            <span class="logo-sub" style="font-size:0.5rem;">Grocery & Daily Essentials</span>
+          </div>
+        </a>
+
+        <!-- 11 Header Links -->
+        <div class="hidden xl:flex items-center gap-0.5">
+          <div class="dropdown-wrapper">
+            <button class="nav-link flex items-center gap-1" id="home-dropdown-btn">
+              Home
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="index.html">Home 1</a>
+              <a href="home2.html">Home 2</a>
+            </div>
+          </div>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="daily-deals.html" class="nav-link">Daily Deals</a>
+          <!-- <a href="best-sellers.html" class="nav-link">Best Sellers</a> -->
+          <a href="fresh-picks.html" class="nav-link">Fresh Picks</a>
+          <a href="new-arrivals.html" class="nav-link">New Arrivals</a>
+          <a href="organic.html" class="nav-link">Organic Products</a>
+          <a href="delivery.html" class="nav-link">Delivery Info</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="icon-btn hidden xl:flex theme-toggle-btn" title="Toggle theme">
+            <svg class="w-4 h-4 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg class="w-4 h-4 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          </button>
+          <button id="lang-icon" class="icon-btn hidden xl:flex lang-toggle-btn" title="Toggle RTL">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+          </button>
+          <button id="mobile-menu-open" class="icon-btn xl:hidden" title="Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ══════════ MAIN — CONTACT PAGE ══════════ -->
+    <main class="flex-grow pt-[70px] sm:pt-[80px]">
+
+      <!-- ─── SECTION 1: PAGE HERO ─── -->
+      <section class="px-4 sm:px-6 lg:px-8 xl:px-10 py-10 sm:py-16 max-w-[1600px] mx-auto">
+        <div class="text-center reveal">
+          <!-- <nav class="inline-flex items-center gap-2 text-xs sm:text-sm text-secondary-text mb-4 sm:mb-6">
+            <a href="index.html" class="hover:text-accent transition">Home</a>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span class="text-accent font-semibold">Contact</span>
+          </nav> -->
+          <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-hover border border-border shadow-sm mb-4 sm:mb-6">
+            <span class="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-accent"></span>
+            </span>
+            <span class="text-accent font-bold text-[10px] sm:text-xs tracking-wide uppercase">Replies within 2 hours · 7 days a week</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-text leading-tight mb-4 sm:mb-6">
+            We're Here<br/>
+            <span class="text-accent">Whenever You Need Us.</span>
+          </h1>
+          <p class="text-secondary-text text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Questions about an order, feedback on a product, or just want to say hi? Reach out through any channel below — real humans answer every message.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 2: CONTACT CHANNELS (4 CARDS) ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Get in Touch</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Four Ways to Reach Us</h2>
+            <p class="text-secondary-text text-base sm:text-lg">Pick the channel that works best for you — we're always happy to help.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+            <!-- Phone -->
+            <a href="tel:+18005550199" class="contact-card bg-background p-6 sm:p-8 rounded-2xl border border-border reveal text-center h-full flex flex-col">
+              <div class="contact-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-phone text-2xl sm:text-3xl"></i>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Call Us</h3>
+              <p class="text-secondary-text text-xs sm:text-sm mb-3 min-h-[2.5rem] sm:min-h-[3rem]">7 AM – 10 PM, every day</p>
+              <p class="text-accent font-bold text-sm sm:text-base">+1 (800) 555-0199</p>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hello@freshmart.com" class="contact-card bg-background p-6 sm:p-8 rounded-2xl border border-border reveal text-center h-full flex flex-col">
+              <div class="contact-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-envelope text-2xl sm:text-3xl"></i>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Email Us</h3>
+              <p class="text-secondary-text text-xs sm:text-sm mb-3 min-h-[2.5rem] sm:min-h-[3rem]">Replies in 2 hours</p>
+              <p class="text-accent font-bold text-sm sm:text-base break-words">hello@freshmart.com</p>
+            </a>
+
+            <!-- Live Chat -->
+            <a href="#" class="contact-card bg-background p-6 sm:p-8 rounded-2xl border border-border reveal text-center h-full flex flex-col">
+              <div class="contact-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-comments text-2xl sm:text-3xl"></i>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Live Chat</h3>
+              <p class="text-secondary-text text-xs sm:text-sm mb-3 min-h-[2.5rem] sm:min-h-[3rem]">Instant answers</p>
+              <p class="text-accent font-bold text-sm sm:text-base">Start a chat</p>
+            </a>
+
+            <!-- Visit -->
+            <a href="#" class="contact-card bg-background p-6 sm:p-8 rounded-2xl border border-border reveal text-center h-full flex flex-col">
+              <div class="contact-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-location-dot text-2xl sm:text-3xl"></i>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Visit Store</h3>
+              <p class="text-secondary-text text-xs sm:text-sm mb-3 min-h-[2.5rem] sm:min-h-[3rem]">Open daily 7 AM – 10 PM</p>
+              <p class="text-accent font-bold text-sm sm:text-base">42 Market Street</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 3: CONTACT FORM + INFO ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          <!-- Form -->
+          <div class="lg:col-span-3 reveal">
+            <div class="bg-background rounded-2xl border border-border p-6 sm:p-10">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Send a Message</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Drop Us a Line</h2>
+              <p class="text-secondary-text text-base sm:text-lg mb-8 leading-relaxed">Fill in the form below and our team will get back to you within 2 hours.</p>
+
+              <form class="space-y-5">
+                <!-- Name Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div>
+                    <label class="block text-sm font-bold text-primary-text mb-2">First Name</label>
+                    <input type="text" placeholder="Jane" class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base placeholder-secondary-text">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-bold text-primary-text mb-2">Last Name</label>
+                    <input type="text" placeholder="Doe" class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base placeholder-secondary-text">
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label class="block text-sm font-bold text-primary-text mb-2">Email Address</label>
+                  <input type="email" placeholder="jane@example.com" class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base placeholder-secondary-text">
+                </div>
+
+                <!-- Phone -->
+                <div>
+                  <label class="block text-sm font-bold text-primary-text mb-2">Phone (optional)</label>
+                  <input type="tel" placeholder="+1 (555) 000-0000" class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base placeholder-secondary-text">
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <label class="block text-sm font-bold text-primary-text mb-2">Subject</label>
+                  <select class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base">
+                    <option>Order enquiry</option>
+                    <option>Delivery question</option>
+                    <option>Product feedback</option>
+                    <option>Business partnership</option>
+                    <option>Report a problem</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label class="block text-sm font-bold text-primary-text mb-2">Your Message</label>
+                  <textarea rows="5" placeholder="Tell us how we can help..." class="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-primary-text text-sm sm:text-base placeholder-secondary-text resize-none"></textarea>
+                </div>
+
+                <!-- Checkbox -->
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input type="checkbox" class="mt-1 w-4 h-4 accent-green-500">
+                  <span class="text-xs sm:text-sm text-secondary-text leading-relaxed">I agree to be contacted about my enquiry and have read the privacy policy.</span>
+                </label>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary w-full px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-lg justify-center">
+                  Send Message <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Info Sidebar -->
+          <div class="lg:col-span-2 space-y-5 sm:space-y-6 reveal">
+            <!-- Info Card -->
+            <div class="bg-background rounded-2xl border border-border p-6 sm:p-8">
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-6">Contact Details</h3>
+              <ul class="space-y-5">
+                <li class="flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-hover border border-border flex items-center justify-center text-accent flex-shrink-0">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs sm:text-sm font-bold text-primary-text uppercase tracking-wider mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Store Address</p>
+                    <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">42 Market Street<br>Greenfield, NY 10012</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-hover border border-border flex items-center justify-center text-accent flex-shrink-0">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs sm:text-sm font-bold text-primary-text uppercase tracking-wider mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Phone</p>
+                    <a href="tel:+18005550199" class="text-secondary-text text-sm sm:text-base hover:text-accent transition">+1 (800) 555-0199</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-hover border border-border flex items-center justify-center text-accent flex-shrink-0">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs sm:text-sm font-bold text-primary-text uppercase tracking-wider mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Email</p>
+                    <a href="mailto:hello@freshmart.com" class="text-secondary-text text-sm sm:text-base hover:text-accent transition break-words">hello@freshmart.com</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-hover border border-border flex items-center justify-center text-accent flex-shrink-0">
+                    <i class="fa-regular fa-clock"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs sm:text-sm font-bold text-primary-text uppercase tracking-wider mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Hours</p>
+                    <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Mon – Sun: 7 AM – 10 PM<br>Delivery: 8 AM – 9 PM</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="bg-background rounded-2xl border border-border p-6 sm:p-8">
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-4">Follow Us</h3>
+              <p class="text-secondary-text text-sm sm:text-base mb-5 leading-relaxed">Get the latest news, offers, and recipes on our social channels.</p>
+              <div class="flex flex-wrap gap-3">
+                <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-btn" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <!-- Response Promise -->
+            <div class="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl border border-green-600 p-6 sm:p-8 relative overflow-hidden shadow-lg">
+              <i class="fa-solid fa-comments absolute -bottom-6 -right-6 text-[100px] text-white opacity-10"></i>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center mb-4">
+                  <i class="fa-solid fa-headset text-white text-lg"></i>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-white mb-2">Real Human Support</h3>
+                <p class="text-green-50 text-xs sm:text-sm leading-relaxed mb-4">Every message is read by a real person — no bots, no scripts. Average reply time: under 2 hours.</p>
+                <div class="flex items-center gap-2 text-white text-xs sm:text-sm font-bold">
+                  <i class="fa-solid fa-star"></i>
+                  <span>Rated 4.9/5 by our customers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 4: STORE HOURS & LOCATIONS ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Our Stores</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Visit Us in Person</h2>
+            <p class="text-secondary-text text-base sm:text-lg">Three locations across the city — always happy to see you.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+            <!-- Store 1 -->
+            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
+              <div class="h-40 sm:h-52 overflow-hidden">
+                  <img src="assets/home1.jpg" alt="Market Street Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              </div>
+              <div class="p-5 sm:p-8 flex flex-col flex-grow">
+                <div class="inline-flex items-center gap-2 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">
+                  <i class="fa-solid fa-star text-[8px]"></i> FLAGSHIP
+                </div>
+                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2">Market Street Store</h3>
+                <p class="text-secondary-text text-sm sm:text-base mb-4 leading-relaxed">42 Market Street<br>Greenfield, NY 10012</p>
+                <div class="space-y-2 text-xs sm:text-sm">
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-regular fa-clock text-accent"></i>
+                    <span>Mon – Sun: 7 AM – 10 PM</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-solid fa-phone text-accent"></i>
+                    <span>+1 (800) 555-0199</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Store 2 -->
+            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
+              <div class="h-40 sm:h-52 overflow-hidden">
+                  <img src="assets/c1.jpg" alt="Riverside Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              </div>
+              <div class="p-5 sm:p-8 flex flex-col flex-grow">
+                <div class="inline-flex items-center gap-2 bg-hover border border-border text-primary-text text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">
+                  RIVERSIDE
+                </div>
+                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2">Riverside Store</h3>
+                <p class="text-secondary-text text-sm sm:text-base mb-4 leading-relaxed">188 River Road<br>Riverside, NY 10023</p>
+                <div class="space-y-2 text-xs sm:text-sm">
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-regular fa-clock text-accent"></i>
+                    <span>Mon – Sun: 7 AM – 10 PM</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-solid fa-phone text-accent"></i>
+                    <span>+1 (800) 555-0198</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Store 3 -->
+            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal sm:col-span-2 lg:col-span-1">
+              <div class="h-40 sm:h-52 overflow-hidden">
+                   <img src="assets/c2.jpg" alt="Midtown Store" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              </div>
+              <div class="p-5 sm:p-8 flex flex-col flex-grow">
+                <div class="inline-flex items-center gap-2 bg-hover border border-border text-primary-text text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">
+                  MIDTOWN
+                </div>
+                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2">Midtown Store</h3>
+                <p class="text-secondary-text text-sm sm:text-base mb-4 leading-relaxed">512 5th Avenue<br>Midtown, NY 10036</p>
+                <div class="space-y-2 text-xs sm:text-sm">
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-regular fa-clock text-accent"></i>
+                    <span>Mon – Sun: 8 AM – 10 PM</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-secondary-text">
+                    <i class="fa-solid fa-phone text-accent"></i>
+                    <span>+1 (800) 555-0197</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 5: FIND US / MAP (replaced Response Promise) ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+          <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Find Us</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Visit Our Flagship Store</h2>
+          <p class="text-secondary-text text-base sm:text-lg">Stop by our Market Street flagship — open daily 7 AM – 10 PM, no appointment needed.</p>
+        </div>
+
+        <div class="map-container reveal">
+          <!-- Live Google Map -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6936686757026!2d-73.98811728459385!3d40.74844097932842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="FreshMart Flagship Location">
+          </iframe>
+
+          <!-- Floating info card overlay -->
+          <div class="absolute bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xs bg-background/95 backdrop-blur-md rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-2xl border border-border">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white shrink-0">
+                <i class="fa-solid fa-map-pin text-xs"></i>
+              </div>
+              <div class="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-secondary-text">Location</div>
+            </div>
+            <div class="font-extrabold text-primary-text text-xs sm:text-sm">42 Market Street</div>
+            <div class="text-[10px] sm:text-xs text-secondary-text mt-1 mb-3">Greenfield, NY 10012</div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=42+Market+Street+New+York" target="_blank" rel="noopener" class="btn-primary w-full text-center py-2 sm:py-2.5 rounded-xl font-bold text-[10px] sm:text-xs inline-flex items-center justify-center gap-2">
+              <i class="fa-solid fa-directions text-xs"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 6: FAQ + FINAL CTA ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Contact FAQs</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Questions About Reaching Us</h2>
+            <p class="text-secondary-text text-base sm:text-lg">Quick answers before you get in touch.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-stopwatch text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">How fast do you reply?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Average reply time is under 2 hours during store hours. Live chat is usually instant.</p>
+            </div>
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-phone text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Can I call instead of emailing?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Absolutely — call us at +1 (800) 555-0199 any day between 7 AM and 10 PM.</p>
+            </div>
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-box text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">How do I report an order issue?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Use the contact form or call us directly. We'll fix or refund within 24 hours.</p>
+            </div>
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-briefcase text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Do you take business enquiries?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Yes — pick "Business partnership" in the contact form and our team will be in touch.</p>
+            </div>
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-store text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Can I visit your stores?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Absolutely — we have three stores open daily. See the locations section above.</p>
+            </div>
+            <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
+              <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
+                <i class="fa-solid fa-shield-halved text-2xl"></i>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Is my data safe with you?</h3>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Yes — we never share your information. See our privacy policy for full details.</p>
+            </div>
+          </div>
+
+          <!-- Final CTA -->
+          <!-- Final CTA — background image c3 -->
+<div class="final-cta-bg rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center flex flex-col items-center shadow-2xl relative overflow-hidden mt-12 sm:mt-20 reveal">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">We'd Love to Hear From You.</h2>
+  <p class="text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 px-2">Questions, feedback, or just want to say hi — we're always happy to help.</p>
+  <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+    <a href="tel:+18005550199" class="bg-white text-green-700 hover:bg-gray-100 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto transition-all hover:scale-105">
+      <i class="fa-solid fa-phone text-xs"></i> Call Now
+    </a>
+    <a href="mailto:hello@freshmart.com" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+      <i class="fa-solid fa-envelope"></i> Email Us
+    </a>
+  </div>
+</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ══════════ MOBILE DRAWER — SAME AS INDEX ══════════ -->
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-[60] pointer-events-none transition-all duration-300">
+      <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+      <div id="drawer-content" class="absolute top-0 left-0 right-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out border-b border-border">
+        <div class="flex justify-between items-center pb-4 border-b border-border">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <div class="logo-badge" style="width:40px;height:40px;font-size:1.1rem;">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <span class="logo-text" style="font-size:1.25rem;">
+              <span class="text-primary-text">Fresh</span><span class="text-accent">Mart</span>
+            </span>
+          </a>
+          <div class="flex items-center gap-2"><button class="icon-btn theme-toggle-btn" title="Toggle theme"><svg class="w-4 h-4 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg><svg class="w-4 h-4 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg></button><button class="icon-btn lang-toggle-btn" title="Toggle RTL"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg></button><button id="mobile-menu-close" class="text-primary-text hover:text-accent p-1"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
+        </div>
+        <nav class="flex flex-col space-y-1 py-4">
+          <div>
+            <button class="block text-primary-text font-semibold text-base py-2.5 w-full text-left flex justify-between items-center" id="mobile-home-toggle">
+              Home
+              <svg class="w-4 h-4 transform transition-transform duration-200" id="home-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div id="mobile-home-menu" class="hidden pl-4 flex flex-col space-y-1 mt-1 border-l-2 border-border">
+              <a href="index.html" class="block text-secondary-text hover:text-accent text-sm py-1.5">Home 1</a>
+              <a href="home2.html" class="block text-secondary-text hover:text-accent text-sm py-1.5">Home 2</a>
+            </div>
+          </div>
+          <a href="about.html" class="block text-primary-text font-semibold text-base py-2.5">About Us</a>
+          <a href="shop.html" class="block text-primary-text font-semibold text-base py-2.5">Shop</a>
+          <a href="daily-deals.html" class="block text-primary-text font-semibold text-base py-2.5">Daily Deals</a>
+          <!-- <a href="best-sellers.html" class="block text-primary-text font-semibold text-base py-2.5">Best Sellers</a> -->
+          <a href="fresh-picks.html" class="block text-primary-text font-semibold text-base py-2.5">Fresh Picks</a>
+          <a href="new-arrivals.html" class="block text-primary-text font-semibold text-base py-2.5">New Arrivals</a>
+          <a href="organic.html" class="block text-primary-text font-semibold text-base py-2.5">Organic Products</a>
+          <a href="delivery.html" class="block text-primary-text font-semibold text-base py-2.5">Delivery Info</a>
+          <a href="offers.html" class="block text-primary-text font-semibold text-base py-2.5">Offers</a>
+          <a href="contact.html" class="block text-primary-text font-semibold text-base py-2.5">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ══════════ FOOTER — SAME AS INDEX ══════════ -->
+    <footer id="main-footer" class="pt-16 sm:pt-20">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-12 sm:pb-16">
+          <div class="lg:col-span-4 sm:col-span-2">
+            <a href="index.html" class="flex items-center gap-3 mb-6">
+              <div class="logo-badge">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </div>
+              <div class="flex flex-col">
+                <span class="logo-text">
+                  <span class="text-primary-text">Fresh</span><span class="text-accent">Mart</span>
+                </span>
+                <span class="logo-sub">Grocery & Daily Essentials</span>
+              </div>
+            </a>
+            <p class="text-secondary-text text-sm sm:text-base leading-relaxed max-w-sm mb-6 sm:mb-8">
+              Your neighbourhood grocery store offering fresh fruits, vegetables, pantry staples, and daily essentials with same-day delivery.
+            </p>
+            <div class="flex flex-wrap gap-2 sm:gap-3">
+              <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-btn" title="X"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="social-btn" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+              <a href="#" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="lg:col-span-2 lg:col-start-6">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="space-y-3 list-none p-0 m-0">
+              <li><a href="index.html" class="footer-link">Home 1</a></li>
+              <li><a href="home2.html" class="footer-link">Home 2</a></li>
+              <li><a href="shop.html" class="footer-link">Shop</a></li>
+              <li><a href="daily-deals.html" class="footer-link">Daily Deals</a></li>
+              <!-- <li><a href="best-sellers.html" class="footer-link">Best Sellers</a></li> -->
+              <li><a href="delivery.html" class="footer-link">Delivery Info</a></li>
+              <li><a href="about.html" class="footer-link">About Us</a></li>
+            </ul>
+          </div>
+          <div class="lg:col-span-2">
+            <h4 class="footer-heading">Categories</h4>
+            <ul class="space-y-3 list-none p-0 m-0">
+              <li><a href="shop.html" class="footer-link">Fruits</a></li>
+              <li><a href="shop.html" class="footer-link">Vegetables</a></li>
+              <li><a href="shop.html" class="footer-link">Pantry Essentials</a></li>
+              <li><a href="shop.html" class="footer-link">Bakery & Dairy</a></li>
+              <li><a href="shop.html" class="footer-link">Beverages</a></li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3 sm:col-span-2">
+            <h4 class="footer-heading">Contact Info</h4>
+            <ul class="space-y-4 list-none p-0 m-0">
+              <li class="footer-info-row">
+                <div class="footer-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <span>42 Market Street,<br>Greenfield, NY 10012</span>
+              </li>
+              <li class="footer-info-row">
+                <div class="footer-info-icon"><i class="fa-solid fa-phone"></i></div>
+                <a href="tel:+18005550199" class="footer-link" style="font-size:0.95rem;">+1 (800) 555-0199</a>
+              </li>
+              <li class="footer-info-row">
+                <div class="footer-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <a href="mailto:hello@freshmart.com" class="footer-link" style="font-size:0.95rem;">hello@freshmart.com</a>
+              </li>
+              <li class="footer-info-row">
+                <div class="footer-info-icon"><i class="fa-regular fa-clock"></i></div>
+                <span>Daily: 7 AM – 10 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p class="text-xs sm:text-sm text-secondary-text m-0">© 2026 FreshMart. All rights reserved. Crafted with <span class="text-accent">♥</span> for our community.</p>
+          <div class="flex items-center gap-4 sm:gap-6">
+            <a href="#">Privacy Policy</a>
+            <span class="text-border">|</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800, easing: "ease-out-cubic", offset: 60 });
+
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+      revealEls.forEach(el => observer.observe(el));
+
+      const drawer = document.getElementById('mobile-menu-drawer');
+      const content = document.getElementById('drawer-content');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const openDrawer = () => {
+        drawer.classList.remove('pointer-events-none');
+        content.classList.remove('translate-y-[-100%]');
+        backdrop.classList.add('opacity-50', 'pointer-events-auto');
+        document.body.style.overflow = 'hidden';
+      };
+      const closeDrawer = () => {
+        content.classList.add('translate-y-[-100%]');
+        backdrop.classList.remove('opacity-50', 'pointer-events-auto');
+        setTimeout(() => { drawer.classList.add('pointer-events-none'); document.body.style.overflow = ''; }, 300);
+      };
+      document.getElementById('mobile-menu-open')?.addEventListener('click', openDrawer);
+      document.getElementById('mobile-menu-close')?.addEventListener('click', closeDrawer);
+      backdrop?.addEventListener('click', closeDrawer);
+
+      const ht = document.getElementById('mobile-home-toggle');
+      const hm = document.getElementById('mobile-home-menu');
+      const hi = document.getElementById('home-icon');
+      ht?.addEventListener('click', () => {
+        hm.classList.toggle('hidden');
+        hi.classList.toggle('rotate-180');
+      });
+
+      const html = document.documentElement;
+      const applyTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        document.querySelectorAll('.light-icon').forEach(i => i.classList.toggle('hidden', theme === 'dark'));
+        document.querySelectorAll('.dark-icon').forEach(i => i.classList.toggle('hidden', theme === 'light'));
+      };
+      document.querySelectorAll('.theme-toggle-btn').forEach(btn => btn.addEventListener('click', () => {
+        const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      }));
+      applyTheme(localStorage.getItem('theme') || 'light');
+
+      document.querySelectorAll('.lang-toggle-btn').forEach(btn => btn.addEventListener('click', () => {
+        const current = localStorage.getItem('language') === 'ar' ? 'en' : 'ar';
+        localStorage.setItem('language', current);
+        html.setAttribute('dir', current === 'ar' ? 'rtl' : 'ltr');
+      }));
+      html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
+
+      // ─── Active nav link logic (separate pages only) ───
+      const currentPath = window.location.pathname.split('/').pop() || 'contact.html';
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPath) link.classList.add('active');
+      });
+      if (['index.html', 'home2.html', ''].includes(currentPath)) {
+        document.getElementById('home-dropdown-btn')?.classList.add('active');
+        document.getElementById('home-dropdown-btn')?.parentElement?.classList.add('active');
+      }
+    </script>
+  </body>
+</html>
