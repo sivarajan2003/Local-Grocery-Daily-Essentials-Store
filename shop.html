@@ -364,20 +364,81 @@
       }
       .card-hover:hover .cat-icon i { color: white !important; }
 
-      /* ── Product card ── */
+      /* ── Product card (full image overlay style) ── */
       .product-card {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        background: var(--color-hover);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        height: 16rem;
+        display: block;
+      }
+      @media (min-width: 640px) {
+        .product-card { height: 20rem; border-radius: 1.25rem; }
       }
       .product-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 20px 50px rgba(34,197,94,0.15);
+        box-shadow: 0 20px 50px rgba(34,197,94,0.25);
         border-color: var(--color-accent) !important;
       }
       .product-card .product-img {
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .product-card:hover .product-img {
-        transform: scale(1.08);
+        transform: scale(1.1);
+      }
+      .product-card .product-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.10) 100%);
+        z-index: 1;
+      }
+      .product-card .product-content {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 0.85rem;
+        z-index: 2;
+      }
+      @media (min-width: 640px) {
+        .product-card .product-content { padding: 1.15rem; }
+      }
+      .product-card .product-top {
+        position: absolute;
+        top: 0.75rem; left: 0.75rem; right: 0.75rem;
+        z-index: 2;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .product-card .add-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 9999px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.35);
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+      }
+      .product-card .add-btn:hover {
+        background: #22C55E;
+        border-color: #22C55E;
+        color: white;
+        transform: scale(1.1);
       }
 
       /* ── Promise card hover ── */
@@ -442,27 +503,28 @@
         font-size: 1.35rem;
         transition: all 0.35s ease;
       }
+
       /* ── Final CTA background image (sb1) ── */
-.final-cta-bg {
-  background-image: url('assets/sb1.avif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
-}
-.final-cta-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: inherit;
-  z-index: 0;
-}
-.final-cta-bg > * {
-  position: relative;
-  z-index: 1;
-}
+      .final-cta-bg {
+        background-image: url('assets/sb1.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+      }
+      .final-cta-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        border-radius: inherit;
+        z-index: 0;
+      }
+      .final-cta-bg > * {
+        position: relative;
+        z-index: 1;
+      }
     </style>
   </head>
   <body class="font-body antialiased flex flex-col min-h-screen">
@@ -602,74 +664,74 @@
           <a href="#" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">See All Fruits</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-              <img src="assets/s1.jpg"alt="Honeycrisp Apples" class="product-img w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">25% OFF</span>
+
+          <!-- Fruit 1 -->
+          <div class="product-card reveal">
+            <img src="assets/s1.jpg" alt="Honeycrisp Apples" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">25% OFF</span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Honeycrisp Apples</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Sweet & Juicy</p>
-              <div class="flex items-center justify-between mt-auto">
-                <div class="flex items-baseline gap-2">
-                  <span class="text-accent font-bold text-base sm:text-lg">$3.49</span>
-                  <span class="text-secondary-text text-xs line-through">$4.65</span>
-                </div>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Honeycrisp Apples</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Sweet & Juicy</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-accent font-extrabold text-base sm:text-lg">$3.49</span>
+                <span class="text-white/55 text-xs line-through">$4.65</span>
               </div>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-               <img src="assets/s2.jpg" alt="Alphonso Mangoes" class="product-img w-full h-full object-cover">
+          <!-- Fruit 2 -->
+          <div class="product-card reveal">
+            <img src="assets/s2.jpg" alt="Grand Naine" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Grand Naine</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Imported · Box of 6</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$11.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-               <img src="assets/s3.jpg" alt="Seedless Grapes" class="product-img w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">FRESH</span>
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Starfruit</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Green · 500g pack</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$4.20</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Grand Naine</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Imported · Box of 6</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$11.90</span>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-               <img src="assets/s4.avif" alt="Watermelon" class="product-img w-full h-full object-cover">
+          <!-- Fruit 3 -->
+          <div class="product-card reveal">
+            <img src="assets/s3.jpg" alt="Starfruit" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">FRESH</span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Mini Watermelon</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Sweet & Hydrating</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$6.50</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Starfruit</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Green · 500g pack</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$4.20</span>
             </div>
           </div>
+
+          <!-- Fruit 4 -->
+          <div class="product-card reveal">
+            <img src="assets/s4.avif" alt="Mini Watermelon" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Mini Watermelon</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Sweet & Hydrating</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$6.50</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -689,74 +751,74 @@
             <a href="#" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">See All Veggies</a>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/sp2.jpg" alt="Heirloom Tomatoes" class="product-img w-full h-full object-cover">
-                <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">ORGANIC</span>
+
+            <!-- Veggie 1 -->
+            <div class="product-card reveal">
+              <img src="assets/sp2.jpg" alt="Heirloom Tomatoes" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">ORGANIC</span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Heirloom Tomatoes</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Vine-ripened · 500g</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$4.90</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Garden Veggies</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Heirloom Tomatoes</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Vine-ripened · 500g</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$4.90</span>
+              </div>
+            </div>
+
+            <!-- Veggie 2 -->
+            <div class="product-card reveal">
+              <img src="assets/sp5.avif" alt="Baby Spinach" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span></span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+              </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Garden Veggies</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Baby Spinach</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Washed & Ready · 200g</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$2.80</span>
+              </div>
+            </div>
+
+            <!-- Veggie 3 -->
+            <div class="product-card reveal">
+              <img src="assets/sp3.jpg" alt="Carrots" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">15% OFF</span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+              </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Garden Veggies</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Carrots</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Mixed colours · 500g</p>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-accent font-extrabold text-base sm:text-lg">$2.55</span>
+                  <span class="text-white/55 text-xs line-through">$3.00</span>
                 </div>
               </div>
             </div>
 
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/sp5.avif "alt="Baby Spinach" class="product-img w-full h-full object-cover">
+            <!-- Veggie 4 -->
+            <div class="product-card reveal">
+              <img src="assets/sp4.avif" alt="Fresh Zucchini" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span></span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Baby Spinach</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Washed & Ready · 200g</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$2.80</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/sp3.jpg" alt="Rainbow Carrots" class="product-img w-full h-full object-cover">
-                <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">15% OFF</span>
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Carrots</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Mixed colours · 500g</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <div class="flex items-baseline gap-2">
-                    <span class="text-accent font-bold text-base sm:text-lg">$2.55</span>
-                    <span class="text-secondary-text text-xs line-through">$3.00</span>
-                  </div>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Garden Veggies</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Fresh Zucchini</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Green · Pack of 2</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$2.10</span>
               </div>
             </div>
 
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/sp4.avif"alt="Zucchini" class="product-img w-full h-full object-cover">
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Fresh Zucchini</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Green · Pack of 2</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$2.10</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -776,74 +838,74 @@
           <a href="#" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">See Full Pantry</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/sa1.avif"alt="Cold Pressed Olive Oil" class="product-img w-full h-full object-cover">
+
+          <!-- Pantry 1 -->
+          <div class="product-card reveal">
+            <img src="assets/sa1.avif" alt="Cold Pressed Olive Oil" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Cold-Pressed Olive Oil</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Kalamata · 750ml</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$14.99</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Cold-Pressed Olive Oil</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Kalamata · 750ml</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$14.99</span>
+            </div>
+          </div>
+
+          <!-- Pantry 2 -->
+          <div class="product-card reveal">
+            <img src="assets/sa2.avif" alt="Wild Flower Honey" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Wild Flower Honey</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Raw & Unfiltered · 400g</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$11.50</span>
+            </div>
+          </div>
+
+          <!-- Pantry 3 -->
+          <div class="product-card reveal">
+            <img src="assets/sa3.avif" alt="Jasmine Rice" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Jasmine Rice</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Fragrant · 2kg</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$8.90</span>
+            </div>
+          </div>
+
+          <!-- Pantry 4 -->
+          <div class="product-card reveal">
+            <img src="assets/sa4.avif" alt="Whole Wheat Fusilli" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">20% OFF</span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Whole Wheat Fusilli</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Bronze-cut · 500g</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-accent font-extrabold text-base sm:text-lg">$2.80</span>
+                <span class="text-white/55 text-xs line-through">$3.50</span>
               </div>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-            <img src="assets/sa2.avif" alt="Wild Flower Honey" class="product-img w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-accent text-black text-[10px] font-bold px-2.5 py-1 rounded-full z-10"></span>
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Wild Flower Honey</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Raw & Unfiltered · 400g</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$11.50</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-              <img src="assets/sa3.avif" alt="Jasmine Rice" class="product-img w-full h-full object-cover">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Jasmine Rice</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Fragrant · 2kg</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$8.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-              <img src="assets/sa4.avif" alt="Whole Wheat Fusilli" class="product-img w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-accent text-black text-[10px] font-bold px-2.5 py-1 rounded-full z-10">20% OFF</span>
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Whole Wheat Fusilli</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Bronze-cut · 500g</p>
-              <div class="flex items-center justify-between mt-auto">
-                <div class="flex items-baseline gap-2">
-                  <span class="text-accent font-bold text-base sm:text-lg">$2.80</span>
-                  <span class="text-secondary-text text-xs line-through">$3.50</span>
-                </div>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -863,71 +925,71 @@
             <a href="#" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">See All</a>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/b2.avif" alt="Artisan Rye Loaf" class="product-img w-full h-full object-cover">
-                <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">FRESH</span>
+
+            <!-- Bakery 1 -->
+            <div class="product-card reveal">
+              <img src="assets/b2.avif" alt="Artisan Rye Loaf" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">FRESH</span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Artisan Rye Loaf</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Dark rye & caraway</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$5.40</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Bakery & Creamery</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Artisan Rye Loaf</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Dark rye & caraway</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$5.40</span>
               </div>
             </div>
 
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/b3.avif" alt="Greek Yogurt" class="product-img w-full h-full object-cover">
+            <!-- Bakery 2 -->
+            <div class="product-card reveal">
+              <img src="assets/b3.avif" alt="Greek Yogurt" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span></span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Greek Yogurt</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Plain · 500g tub</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$5.90</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/b4.avif" alt="Brown Eggs" class="product-img w-full h-full object-cover">
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Brown Farm Eggs</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">Free-range · Dozen</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$5.20</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Bakery & Creamery</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Greek Yogurt</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Plain · 500g tub</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$5.90</span>
               </div>
             </div>
 
-            <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-              <div class="h-36 sm:h-48 overflow-hidden relative">
-                <img src="assets/b5.avif" alt="Aged Cheddar" class="product-img w-full h-full object-cover">
-                <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">NEW</span>
+            <!-- Bakery 3 -->
+            <div class="product-card reveal">
+              <img src="assets/b4.avif" alt="Brown Farm Eggs" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span></span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Aged Cheddar</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-3">12-month matured · 250g</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <span class="text-accent font-bold text-base sm:text-lg">$8.60</span>
-                  <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                    <i class="fa-solid fa-plus text-xs"></i>
-                  </button>
-                </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Bakery & Creamery</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Brown Farm Eggs</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Free-range · Dozen</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$5.20</span>
               </div>
             </div>
+
+            <!-- Bakery 4 -->
+            <div class="product-card reveal">
+              <img src="assets/b5.avif" alt="Aged Cheddar" class="product-img">
+              <div class="product-overlay"></div>
+              <div class="product-top">
+                <span class="bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">NEW</span>
+                <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+              </div>
+              <div class="product-content">
+                <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Bakery & Creamery</p>
+                <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Aged Cheddar</h4>
+                <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">12-month matured · 250g</p>
+                <span class="text-accent font-extrabold text-base sm:text-lg">$8.60</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -941,133 +1003,135 @@
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-              <img src="assets/s71.avif" alt="Honeycrisp Apples" class="product-img w-full h-full object-cover">
+
+          <!-- All 1 -->
+          <div class="product-card reveal">
+            <img src="assets/s71.avif" alt="Honeycrisp Apples" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Honeycrisp Apples</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Farm Fruits</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$3.49</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Honeycrisp Apples</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Fresh & crisp</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$3.49</span>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-               <img src="assets/s72.avif"  alt="Heirloom Tomatoes" class="product-img w-full h-full object-cover">
+          <!-- All 2 -->
+          <div class="product-card reveal">
+            <img src="assets/s72.avif" alt="Heirloom Tomatoes" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Heirloom Tomatoes</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Garden Veggies</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$4.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-               <img src="assets/s73.webp " alt="Wild Flower Honey" class="product-img w-full h-full object-cover">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Wild Flower Honey</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Artisan Pantry</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$11.50</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Garden Veggies</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Heirloom Tomatoes</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Vine-ripened</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$4.90</span>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-               <img src="assets/s74.avif"  alt="Artisan Rye Loaf" class="product-img w-full h-full object-cover">
+          <!-- All 3 -->
+          <div class="product-card reveal">
+            <img src="assets/s73.webp" alt="Wild Flower Honey" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Artisan Rye Loaf</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Bakery & Creamery</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$5.40</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-              <img src="assets/s75.jpg"  alt="Greek Yogurt" class="product-img w-full h-full object-cover">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Greek Yogurt</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Creamery</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$5.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Wild Flower Honey</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Raw & unfiltered</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$11.50</span>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-               <img src="assets/da6.avif"  alt="Alphonso Mangoes" class="product-img w-full h-full object-cover">
+          <!-- All 4 -->
+          <div class="product-card reveal">
+            <img src="assets/s74.avif" alt="Artisan Rye Loaf" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Grand Naine</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Farm Fruits</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$11.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-               <img src="assets/s77.avif"  alt="Seedless Grapes" class="product-img w-full h-full object-cover">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Seedless Grapes</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Farm Fruits</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$4.20</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Bakery & Creamery</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Artisan Rye Loaf</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Baked at 5 AM</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$5.40</span>
             </div>
           </div>
 
-          <div class="product-card h-full flex flex-col bg-background rounded-2xl border border-border overflow-hidden reveal">
-            <div class="h-36 sm:h-48 overflow-hidden">
-              <img src="assets/s78.webp"  alt="Jasmine Rice" class="product-img w-full h-full object-cover">
+          <!-- All 5 -->
+          <div class="product-card reveal">
+            <img src="assets/s75.jpg" alt="Greek Yogurt" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Jasmine Rice</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Artisan Pantry</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$8.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-              </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Creamery</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Greek Yogurt</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Thick & creamy</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$5.90</span>
             </div>
           </div>
+
+          <!-- All 6 -->
+          <div class="product-card reveal">
+            <img src="assets/da6.avif" alt="Grand Naine" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Grand Naine</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Box of 6</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$11.90</span>
+            </div>
+          </div>
+
+          <!-- All 7 -->
+          <div class="product-card reveal">
+            <img src="assets/s77.avif" alt="Seedless Grapes" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Farm Fruits</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Seedless Grapes</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Sweet green</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$4.20</span>
+            </div>
+          </div>
+
+          <!-- All 8 -->
+          <div class="product-card reveal">
+            <img src="assets/s78.webp" alt="Jasmine Rice" class="product-img">
+            <div class="product-overlay"></div>
+            <div class="product-top">
+              <span></span>
+              <button class="add-btn" title="Add to cart"><i class="fa-solid fa-plus text-xs"></i></button>
+            </div>
+            <div class="product-content">
+              <p class="text-[10px] font-bold text-accent uppercase tracking-wider mb-0.5">Artisan Pantry</p>
+              <h4 class="font-bold text-white text-sm sm:text-base leading-tight mb-0.5 line-clamp-2">Jasmine Rice</h4>
+              <p class="text-[10px] sm:text-xs text-white/75 mb-1.5">Fragrant 2kg</p>
+              <span class="text-accent font-extrabold text-base sm:text-lg">$8.90</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="text-center mt-10 sm:mt-14 reveal">
@@ -1087,28 +1151,28 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
+            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal">
               <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
                 <i class="fa-solid fa-shield-halved text-2xl"></i>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Freshness Guarantee</h3>
               <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">If it's not fresh when it arrives, we replace it or refund you instantly — no questions asked.</p>
             </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
+            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal">
               <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
                 <i class="fa-solid fa-stopwatch text-2xl"></i>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">On-Time Delivery</h3>
               <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Every delivery window is honoured. Late order? Your next delivery fee is on us.</p>
             </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
+            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal">
               <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
                 <i class="fa-solid fa-tag text-2xl"></i>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Honest Pricing</h3>
               <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">The price you see is what you pay. No surge fees, no last-minute charges, no surprises.</p>
             </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
+            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal">
               <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
                 <i class="fa-solid fa-headset text-2xl"></i>
               </div>
@@ -1121,73 +1185,21 @@
 
       <!-- ─── SECTION 9: SHOPPING HELP / FINAL CTA ─── -->
       <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-        <!-- <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
-          <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Shopping Help</span>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Ordering Made Effortless</h2>
-          <p class="text-secondary-text text-base sm:text-lg">Everything you need to know before you place your first order.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-rocket text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">60-Minute Delivery</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Order by 8 PM and receive your basket within the hour — anywhere in our 12 service zones.</p>
-          </div>
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-award text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Quality Promise</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">If anything isn't right, we'll replace it on the spot or refund you instantly.</p>
-          </div>
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-scale-balanced text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Fair Flat Pricing</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">One honest price per product. No rush-hour surcharges, no cart surprises.</p>
-          </div>
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-tractor text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">40+ Partner Farms</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">All within 50 miles. Shorter journeys, fresher food, fairer prices for growers.</p>
-          </div>
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-recycle text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Plastic-Free Packaging</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Recyclable or compostable for every single order. Because fresh food shouldn't cost the planet.</p>
-          </div>
-          <div class="bg-background p-6 sm:p-8 rounded-2xl border border-border card-hover reveal h-full flex flex-col">
-            <div class="cat-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-comments text-2xl"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-3 line-clamp-2 min-h-[3.5rem]">Real Human Support</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Chat, call, or email our team any day of the week. Average reply time: under 2 hours.</p>
-          </div>
-        </div> -->
-
-        <!-- Final CTA -->
         <!-- Final CTA — background image sb1 -->
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 sm:mt-20">
-  <div class="final-cta-bg rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center flex flex-col items-center shadow-2xl relative overflow-hidden reveal">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">Your Basket Is Waiting.</h2>
-  <p class="text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 px-2">Get $10 off your first order and free delivery over $30. Use code FRESH10 at checkout.</p>
-  <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-    <a href="#" class="bg-white text-green-700 hover:bg-gray-100 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto transition-all hover:scale-105">
-      Start Your Order <i class="fa-solid fa-arrow-right text-xs"></i>
-    </a>
-    <a href="contact.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
-      <i class="fa-solid fa-phone"></i> Talk to Us
-    </a>
-  </div>
-</div>
-</div>
+        <div class="max-w-5xl mx-auto w-full mt-4 sm:mt-10">
+          <div class="final-cta-bg rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center flex flex-col items-center shadow-2xl relative overflow-hidden reveal">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">Your Basket Is Waiting.</h2>
+            <p class="text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 px-2">Get $10 off your first order and free delivery over $30. Use code FRESH10 at checkout.</p>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+              <a href="#" class="bg-white text-green-700 hover:bg-gray-100 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto transition-all hover:scale-105">
+                Start Your Order <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+              <a href="contact.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                <i class="fa-solid fa-phone"></i> Talk to Us
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
     </main>
@@ -1220,8 +1232,6 @@
           </div>
           <a href="about.html" class="block text-primary-text font-semibold text-base py-2.5">About Us</a>
           <a href="shop.html" class="block text-primary-text font-semibold text-base py-2.5">Shop</a>
-          <!-- <a href="daily-deals.html" class="block text-primary-text font-semibold text-base py-2.5">Daily Deals</a> -->
-          <!-- <a href="best-sellers.html" class="block text-primary-text font-semibold text-base py-2.5">Best Sellers</a> -->
           <a href="fresh-picks.html" class="block text-primary-text font-semibold text-base py-2.5">Fresh Picks</a>
           <a href="new-arrivals.html" class="block text-primary-text font-semibold text-base py-2.5">New Arrivals</a>
           <a href="organic.html" class="block text-primary-text font-semibold text-base py-2.5">Organic Products</a>
