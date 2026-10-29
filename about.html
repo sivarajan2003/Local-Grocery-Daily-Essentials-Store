@@ -284,9 +284,22 @@
       }
       #main-footer .social-btn:hover {
         background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
-        color: white;
+        color: #FFFFFF !important;
         transform: translateY(-3px);
         border-color: transparent;
+        box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+      }
+      #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover {
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: #FFFFFF !important;
+        border-color: #22C55E;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.55);
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
       }
       .footer-bottom {
         border-top: 1px solid #E5E7EB;
@@ -796,62 +809,70 @@
             <p class="text-secondary-text text-base sm:text-lg">Real people, real care. Here are the faces behind your deliveries.</p>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-8">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
             <!-- Member 1 -->
-            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center">
-              <div class="pt-8 sm:pt-10 px-6">
-                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-4">
-                  <img src="assets/ab2.avif"alt="Amelia Chen" class="w-full h-full object-cover">
+            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center flex flex-col h-full shadow-sm">
+              <div class="pt-6 sm:pt-8 px-4 sm:px-6 shrink-0">
+                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-3 sm:mb-4 shadow-sm">
+                  <img src="assets/ab2.avif" alt="Amelia Chen" class="w-full h-full object-cover">
                 </div>
               </div>
-              <div class="p-5 sm:p-6">
-                <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Amelia Chen</h3>
-                <p class="text-accent text-xs sm:text-sm font-semibold mb-3">Founder & CEO</p>
-                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Started FreshMart in 2015 with a single apple crate and a big idea.</p>
+              <div class="p-4 sm:p-6 pt-0 flex flex-col flex-1 text-center justify-between">
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-1">Amelia Chen</h3>
+                  <p class="text-accent text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Founder & CEO</p>
+                </div>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mt-auto">Started FreshMart in 2015 with a single apple crate and a big idea.</p>
               </div>
             </div>
 
             <!-- Member 2 -->
-            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center">
-              <div class="pt-8 sm:pt-10 px-6">
-                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-4">
-                  <img src="assets/ab3.avif"alt="Marcus Rivera" class="w-full h-full object-cover">
+            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center flex flex-col h-full shadow-sm">
+              <div class="pt-6 sm:pt-8 px-4 sm:px-6 shrink-0">
+                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-3 sm:mb-4 shadow-sm">
+                  <img src="assets/ab3.avif" alt="Marcus Rivera" class="w-full h-full object-cover">
                 </div>
               </div>
-              <div class="p-5 sm:p-6">
-                <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Marcus Rivera</h3>
-                <p class="text-accent text-xs sm:text-sm font-semibold mb-3">Head of Operations</p>
-                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">The man behind our 30-minute delivery promise. Obsessed with logistics.</p>
+              <div class="p-4 sm:p-6 pt-0 flex flex-col flex-1 text-center justify-between">
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-1">Marcus Rivera</h3>
+                  <p class="text-accent text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Head of Operations</p>
+                </div>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mt-auto">The man behind our 30-minute delivery promise. Obsessed with logistics.</p>
               </div>
             </div>
 
             <!-- Member 3 -->
-            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center">
-              <div class="pt-8 sm:pt-10 px-6">
-                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-4">
-                   <img src="assets/ab4.avif"alt="Priya Patel" class="w-full h-full object-cover">
+            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center flex flex-col h-full shadow-sm">
+              <div class="pt-6 sm:pt-8 px-4 sm:px-6 shrink-0">
+                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-3 sm:mb-4 shadow-sm">
+                   <img src="assets/ab4.avif" alt="Priya Patel" class="w-full h-full object-cover">
                 </div>
               </div>
-              <div class="p-5 sm:p-6">
-                <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Priya Patel</h3>
-                <p class="text-accent text-xs sm:text-sm font-semibold mb-3">Farm Partnerships</p>
-                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Builds relationships with our 40+ partner farms. Knows every grower by name.</p>
+              <div class="p-4 sm:p-6 pt-0 flex flex-col flex-1 text-center justify-between">
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-1">Priya Patel</h3>
+                  <p class="text-accent text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Farm Partnerships</p>
+                </div>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mt-auto">Builds relationships with our 40+ partner farms. Knows every grower by name.</p>
               </div>
             </div>
 
             <!-- Member 4 -->
-            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center">
-              <div class="pt-8 sm:pt-10 px-6">
-                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-4">
+            <div class="team-card bg-background rounded-2xl border border-border overflow-hidden card-hover reveal text-center flex flex-col h-full shadow-sm">
+              <div class="pt-6 sm:pt-8 px-4 sm:px-6 shrink-0">
+                <div class="team-avatar w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-accent mb-3 sm:mb-4 shadow-sm">
                    <img src="assets/ab5.avif" alt="David Okafor" class="w-full h-full object-cover">
                 </div>
               </div>
-              <div class="p-5 sm:p-6">
-                <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">David Okafor</h3>
-                <p class="text-accent text-xs sm:text-sm font-semibold mb-3">Customer Care Lead</p>
-                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Leads our support team. Answers every review — the good and the bad.</p>
+              <div class="p-4 sm:p-6 pt-0 flex flex-col flex-1 text-center justify-between">
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-primary-text mb-1 line-clamp-1">David Okafor</h3>
+                  <p class="text-accent text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Customer Care Lead</p>
+                </div>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mt-auto">Leads our support team. Answers every review — the good and the bad.</p>
               </div>
-            </div>
+               </div>
           </div>
         </div>
       </section>

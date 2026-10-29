@@ -284,9 +284,22 @@
       }
       #main-footer .social-btn:hover {
         background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
-        color: white;
+        color: #FFFFFF !important;
         transform: translateY(-3px);
         border-color: transparent;
+        box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+      }
+      #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover {
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: #FFFFFF !important;
+        border-color: #22C55E;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.55);
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
       }
       .footer-bottom {
         border-top: 1px solid #E5E7EB;
@@ -640,229 +653,451 @@
         </div>
       </section>
 
-      <!-- ─── SECTION 4: SHOP BY CATEGORY ─── -->
+      <!-- ─── SECTION 4: SHOP BY CATEGORY (EDITORIAL SHOWCASE & AISLE STRIP) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-16 gap-4 sm:gap-6 reveal">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
           <div class="max-w-2xl text-start">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Shop by Category</h2>
-            <p class="text-secondary-text text-base sm:text-lg">From fresh produce to household essentials — browse our full range of daily products.</p>
+            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Curated Departments</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Shop by Department</h2>
+            <p class="text-secondary-text text-sm sm:text-base">Explore daily essentials organized by aisle — hand-selected for freshness and quality.</p>
           </div>
-          <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">View All Products</a>
+          <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap inline-flex items-center gap-2">
+            Explore All 7 Aisles <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-          <div class="card-hover border border-border rounded-2xl overflow-hidden bg-background shadow-sm reveal flex flex-col h-full">
-            <div class="h-40 sm:h-56 overflow-hidden">
-              <img src="assets/h1.avif" alt="Fresh Fruits" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-5 sm:p-8 flex flex-col flex-grow">
-              <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Fruits</h3>
-              <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">Apples, bananas, berries, citrus, tropical fruits — picked at peak ripeness.</p>
-              <a href="shop.html" class="text-accent font-bold hover:underline flex items-center gap-2 text-sm sm:text-base mt-auto">Browse Fruits <i class="fa-solid fa-arrow-right text-xs"></i></a>
+
+        <!-- Asymmetric Editorial Showcase: 1 Hero Billboard + 4 Quick-access Department Strips -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch reveal">
+          <!-- Featured Department Spotlight (Left 7 Cols) -->
+          <div class="lg:col-span-7 relative rounded-3xl overflow-hidden border border-border group bg-hover min-h-[380px] sm:min-h-[460px] flex flex-col justify-end p-6 sm:p-10">
+            <img src="assets/h1.avif" alt="Fresh Fruits & Orchards" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10"></div>
+            
+            <div class="relative z-10 space-y-3 sm:space-y-4 max-w-xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider">
+                <i class="fa-solid fa-apple-whole text-[10px]"></i> Department Spotlight
+              </span>
+              <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">Fresh Orchards & Berry Harvests</h3>
+              <p class="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed">
+                Apples, berries, citrus, and ripe tropical fruits handpicked daily at peak sugars from local orchards within 50 miles.
+              </p>
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <a href="shop.html" class="btn-primary px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md inline-flex items-center gap-2">
+                  Shop Orchard Fruits <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <span class="text-white/80 text-xs font-semibold backdrop-blur-md px-3 py-2 rounded-xl bg-white/10 border border-white/20">180+ Seasonal Varieties</span>
+              </div>
             </div>
           </div>
-          <div class="card-hover border border-border rounded-2xl overflow-hidden bg-background shadow-sm reveal flex flex-col h-full">
-            <div class="h-40 sm:h-56 overflow-hidden">
-              <img src="assets/h4.avif" alt="Vegetables" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-5 sm:p-8 flex flex-col flex-grow">
-              <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Vegetables</h3>
-              <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">Leafy greens, root vegetables, herbs, and seasonal picks — organic where possible.</p>
-              <a href="shop.html" class="text-accent font-bold hover:underline flex items-center gap-2 text-sm sm:text-base mt-auto">Browse Vegetables <i class="fa-solid fa-arrow-right text-xs"></i></a>
-            </div>
+
+          <!-- Staggered Editorial Department List (Right 5 Cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+            <!-- Department 1: Farm Vegetables -->
+            <a href="shop.html" class="group flex items-center gap-4 p-3.5 sm:p-4 rounded-2xl border border-border bg-background hover:border-accent hover:bg-hover transition-all duration-300">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/h4.avif" alt="Vegetables" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-0.5">
+                  <h4 class="font-bold text-primary-text text-sm sm:text-base group-hover:text-accent transition-colors truncate">Farm Fresh Vegetables</h4>
+                  <span class="text-[10px] font-bold text-accent uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-full shrink-0">130+ Items</span>
+                </div>
+                <p class="text-secondary-text text-xs line-clamp-1">Crisp greens, earthy roots, and culinary aromatics</p>
+                <span class="text-xs font-semibold text-accent inline-flex items-center gap-1 mt-1">Browse Aisle <i class="fa-solid fa-angle-right text-[10px]"></i></span>
+              </div>
+            </a>
+
+            <!-- Department 2: Pantry Essentials -->
+            <a href="shop.html" class="group flex items-center gap-4 p-3.5 sm:p-4 rounded-2xl border border-border bg-background hover:border-accent hover:bg-hover transition-all duration-300">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/h3.avif" alt="Pantry" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-0.5">
+                  <h4 class="font-bold text-primary-text text-sm sm:text-base group-hover:text-accent transition-colors truncate">Pantry Essentials & Grains</h4>
+                  <span class="text-[10px] font-bold text-accent uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-full shrink-0">220+ Items</span>
+                </div>
+                <p class="text-secondary-text text-xs line-clamp-1">Heirloom rice, cold-pressed oils, flours, and herbs</p>
+                <span class="text-xs font-semibold text-accent inline-flex items-center gap-1 mt-1">Browse Aisle <i class="fa-solid fa-angle-right text-[10px]"></i></span>
+              </div>
+            </a>
+
+            <!-- Department 3: Bakery & Dairy -->
+            <a href="shop.html" class="group flex items-center gap-4 p-3.5 sm:p-4 rounded-2xl border border-border bg-background hover:border-accent hover:bg-hover transition-all duration-300">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/home4.jpg" alt="Bakery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-0.5">
+                  <h4 class="font-bold text-primary-text text-sm sm:text-base group-hover:text-accent transition-colors truncate">Artisan Bakery & Daily Dairy</h4>
+                  <span class="text-[10px] font-bold text-accent uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-full shrink-0">Fresh at 5 AM</span>
+                </div>
+                <p class="text-secondary-text text-xs line-clamp-1">Crusty sourdough, whole milk, artisan cheeses & eggs</p>
+                <span class="text-xs font-semibold text-accent inline-flex items-center gap-1 mt-1">Browse Aisle <i class="fa-solid fa-angle-right text-[10px]"></i></span>
+              </div>
+            </a>
+
+            <!-- Department 4: Pure Beverages -->
+            <a href="shop.html" class="group flex items-center gap-4 p-3.5 sm:p-4 rounded-2xl border border-border bg-background hover:border-accent hover:bg-hover transition-all duration-300">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/h26.jpg" alt="Beverages" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-0.5">
+                  <h4 class="font-bold text-primary-text text-sm sm:text-base group-hover:text-accent transition-colors truncate">Cold-Pressed Juices & Drinks</h4>
+                  <span class="text-[10px] font-bold text-accent uppercase tracking-wider bg-accent/10 px-2 py-0.5 rounded-full shrink-0">100% Pure</span>
+                </div>
+                <p class="text-secondary-text text-xs line-clamp-1">Unsweetened juices, sparkling spring water & teas</p>
+                <span class="text-xs font-semibold text-accent inline-flex items-center gap-1 mt-1">Browse Aisle <i class="fa-solid fa-angle-right text-[10px]"></i></span>
+              </div>
+            </a>
           </div>
-          <div class="card-hover border border-border rounded-2xl overflow-hidden bg-background shadow-sm reveal flex flex-col h-full">
-            <div class="h-40 sm:h-56 overflow-hidden">
-              <img src="assets/h3.avif" alt="Pantry" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+      </section>
+
+      <!-- ─── SECTION 6: DAILY DEALS (INTERACTIVE TIMED SHOWCASE BANNER) ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto border-t border-border">
+        <div class="relative rounded-3xl overflow-hidden border border-border bg-gradient-to-br from-green-500/10 via-background to-hover p-6 sm:p-10 lg:p-14 reveal">
+          <!-- Background decorative glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <!-- Left Info & Live Counter (5 cols) -->
+            <div class="lg:col-span-5 space-y-4 sm:space-y-6 text-start">
+              <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-bold text-xs uppercase tracking-wider">
+                <i class="fa-solid fa-fire text-red-500 animate-pulse"></i> Flash Markdown · Today Only
+              </div>
+              <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-primary-text leading-tight">
+                Daily Deals &<br/>
+                <span class="text-accent">Sunrise Savings</span>
+              </h2>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed">
+                Direct-from-farm stock discounted up to 25% to ensure zero food waste. Restocked every dawn and valid until the countdown finishes.
+              </p>
+              
+              <!-- Countdown bar -->
+              <div class="flex items-center gap-3 pt-1">
+                <span class="text-xs font-semibold text-secondary-text">Deals expire in:</span>
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-1.5 rounded-lg bg-background border border-border font-extrabold text-xs sm:text-sm text-primary-text font-mono shadow-sm">08h</span>
+                  <span class="text-accent font-bold">:</span>
+                  <span class="px-2.5 py-1.5 rounded-lg bg-background border border-border font-extrabold text-xs sm:text-sm text-primary-text font-mono shadow-sm">42m</span>
+                  <span class="text-accent font-bold">:</span>
+                  <span class="px-2.5 py-1.5 rounded-lg bg-background border border-border font-extrabold text-xs sm:text-sm text-primary-text font-mono shadow-sm">19s</span>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <a href="offers.html" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md inline-flex items-center gap-2">
+                  Claim All Today's Offers <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+              </div>
             </div>
-            <div class="p-5 sm:p-8 flex flex-col flex-grow">
-              <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Pantry Essentials</h3>
-              <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">Rice, pasta, flour, sugar, oils, spices, and everything for your kitchen.</p>
-              <a href="shop.html" class="text-accent font-bold hover:underline flex items-center gap-2 text-sm sm:text-base mt-auto">Browse Pantry <i class="fa-solid fa-arrow-right text-xs"></i></a>
+
+            <!-- Right Deal Showcases (7 cols: 3 horizontal deal strips with high-quality product photography) -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+              <!-- Deal 1: Crisp Honeycrisp Apples -->
+              <div class="group bg-background rounded-2xl border border-border p-3.5 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-sm hover:border-accent hover:shadow-lg transition-all duration-300">
+                <div class="w-full sm:w-36 h-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 relative border border-border bg-hover">
+                  <img src="assets/d1.avif" alt="Fresh Crisp Honeycrisp Apples" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                  <span class="absolute top-2.5 left-2.5 bg-red-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">20% OFF</span>
+                </div>
+                <div class="flex-1 text-start w-full">
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <div>
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Local Orchard Harvest</span>
+                      <h4 class="font-bold text-primary-text text-base sm:text-lg leading-tight">Crisp Honeycrisp Apples</h4>
+                    </div>
+                    <span class="text-xs text-secondary-text font-medium bg-hover px-2 py-0.5 rounded-md shrink-0">1kg bag</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm mb-3 line-clamp-2">Sweet, snappy, and orchard-fresh. Hand-graded for peak juice and balanced sweetness.</p>
+                  <div class="flex items-center justify-between pt-1 border-t border-border/50">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-accent font-extrabold text-lg sm:text-xl">$2.99</span>
+                      <span class="text-secondary-text text-xs line-through">$3.74</span>
+                      <span class="text-[10px] font-bold text-green-600 bg-green-500/10 px-2 py-0.5 rounded">Save $0.75</span>
+                    </div>
+                    <button class="w-8 h-8 rounded-full bg-hover border border-border text-accent hover:bg-accent hover:text-white flex items-center justify-center transition-colors shadow-sm" title="Add to basket">
+                      <i class="fa-solid fa-plus text-xs"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deal 2: Raw Wildflower Honey -->
+              <div class="group bg-background rounded-2xl border border-border p-3.5 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-sm hover:border-accent hover:shadow-lg transition-all duration-300">
+                <div class="w-full sm:w-36 h-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 relative border border-border bg-hover">
+                  <img src="assets/d2.webp" alt="Raw Mountain Wildflower Honey" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                  <span class="absolute top-2.5 left-2.5 bg-red-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">15% OFF</span>
+                </div>
+                <div class="flex-1 text-start w-full">
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <div>
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Raw & Unfiltered</span>
+                      <h4 class="font-bold text-primary-text text-base sm:text-lg leading-tight">Wild Mountain Blossom Honey</h4>
+                    </div>
+                    <span class="text-xs text-secondary-text font-medium bg-hover px-2 py-0.5 rounded-md shrink-0">400g jar</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm mb-3 line-clamp-2">Pure unfiltered apiary honey rich in active enzymes and fragrant clover floral notes.</p>
+                  <div class="flex items-center justify-between pt-1 border-t border-border/50">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-accent font-extrabold text-lg sm:text-xl">$7.48</span>
+                      <span class="text-secondary-text text-xs line-through">$8.80</span>
+                      <span class="text-[10px] font-bold text-green-600 bg-green-500/10 px-2 py-0.5 rounded">Save $1.32</span>
+                    </div>
+                    <button class="w-8 h-8 rounded-full bg-hover border border-border text-accent hover:bg-accent hover:text-white flex items-center justify-center transition-colors shadow-sm" title="Add to basket">
+                      <i class="fa-solid fa-plus text-xs"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deal 3: Morning Stoneground Sourdough -->
+              <div class="group bg-background rounded-2xl border border-border p-3.5 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-sm hover:border-accent hover:shadow-lg transition-all duration-300">
+                <div class="w-full sm:w-36 h-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 relative border border-border bg-hover">
+                  <img src="assets/d3.avif" alt="Morning Baked Artisan Sourdough" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                  <span class="absolute top-2.5 left-2.5 bg-accent text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">BAKED 5 AM</span>
+                </div>
+                <div class="flex-1 text-start w-full">
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <div>
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Hearth Artisan Bakery</span>
+                      <h4 class="font-bold text-primary-text text-base sm:text-lg leading-tight">Morning Stoneground Sourdough</h4>
+                    </div>
+                    <span class="text-xs text-secondary-text font-medium bg-hover px-2 py-0.5 rounded-md shrink-0">700g loaf</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm mb-3 line-clamp-2">Slow-fermented 24 hours, blistered golden crust with a soft, custard-like crumb.</p>
+                  <div class="flex items-center justify-between pt-1 border-t border-border/50">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-accent font-extrabold text-lg sm:text-xl">$4.50</span>
+                      <span class="text-secondary-text text-xs line-through">$5.40</span>
+                      <span class="text-[10px] font-bold text-green-600 bg-green-500/10 px-2 py-0.5 rounded">Save $0.90</span>
+                    </div>
+                    <button class="w-8 h-8 rounded-full bg-hover border border-border text-accent hover:bg-accent hover:text-white flex items-center justify-center transition-colors shadow-sm" title="Add to basket">
+                      <i class="fa-solid fa-plus text-xs"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── SECTION 5: HOW IT WORKS ─── -->
+      <!-- ─── SECTION 7: BEST SELLERS & FRESH PICKS (EDITORIAL SPREAD WITH FEATURED HERO & SPEC MATRIX) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
         <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-20 reveal">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Groceries in 4 Steps</h2>
-            <p class="text-secondary-text text-base sm:text-lg">Simple, fast, and convenient. Here's how to get your daily essentials delivered.</p>
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
+            <div class="max-w-2xl text-start">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Neighbourhood Favourites</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Best Sellers & Fresh Picks</h2>
+              <p class="text-secondary-text text-sm sm:text-base">Ordered by thousands of local kitchens every week. Always fresh, always in season.</p>
+            </div>
+            <a href="fresh-picks.html" class="btn-outline px-5 sm:px-6 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap inline-flex items-center gap-2">
+              Explore Fresh Picks <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 text-center relative">
-            <div class="hidden lg:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-border z-0"></div>
-            <div class="relative z-10 flex flex-col items-center reveal">
-              <div class="w-16 h-16 sm:w-20 md:w-24 sm:h-20 md:h-24 rounded-full bg-background border-4 border-border text-accent flex items-center justify-center text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 shadow-md transition-all duration-300 hover:border-accent hover:scale-110">
-                <i class="fa-solid fa-basket-shopping"></i>
+
+          <!-- Editorial Grid: 1 Hero Visual Story + 3 Horizontal Feature Rows -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch reveal">
+            <!-- Left Hero Product Showcase (5 cols) -->
+            <div class="lg:col-span-5 relative rounded-3xl overflow-hidden border border-border bg-background flex flex-col">
+              <div class="relative h-64 sm:h-80 overflow-hidden">
+                <img src="assets/home7.jpg" alt="Artisan Dairy Milk" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">#1 Weekly Staple</span>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <p class="text-[10px] uppercase font-bold tracking-widest text-accent mb-0.5">Grass-Fed Dairy</p>
+                  <h3 class="text-xl sm:text-2xl font-bold">Pure Farm Organic Whole Milk</h3>
+                </div>
               </div>
-              <h3 class="text-base sm:text-xl font-bold text-primary-text mb-2 sm:mb-3">1. Pick Your Items</h3>
-              <p class="text-secondary-text text-sm sm:text-base">Browse categories and add fresh produce, pantry items, and essentials to your cart.</p>
+              <div class="p-6 sm:p-8 flex flex-col justify-between flex-grow space-y-4">
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">
+                  Glass-bottled, non-homogenized whole milk from pasture-raised Jersey cows. Delivered cold within 6 hours of morning bottling.
+                </p>
+                <div class="grid grid-cols-3 gap-2 py-2 border-y border-border text-center">
+                  <div>
+                    <p class="text-xs text-secondary-text">Fat Content</p>
+                    <p class="font-bold text-primary-text text-sm">3.8% Cream</p>
+                  </div>
+                  <div>
+                    <p class="text-xs text-secondary-text">Farm Distance</p>
+                    <p class="font-bold text-primary-text text-sm">18 Miles</p>
+                  </div>
+                  <div>
+                    <p class="text-xs text-secondary-text">Rating</p>
+                    <p class="font-bold text-accent text-sm">★ 4.95</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <div>
+                    <span class="text-2xl font-extrabold text-accent">$3.20</span>
+                    <span class="text-xs text-secondary-text"> / 1L Bottle</span>
+                  </div>
+                  <button class="btn-primary px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-cart-plus text-xs"></i> Add to Cart
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="relative z-10 flex flex-col items-center reveal">
-              <div class="w-16 h-16 sm:w-20 md:w-24 sm:h-20 md:h-24 rounded-full bg-background border-4 border-border text-accent flex items-center justify-center text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 shadow-md transition-all duration-300 hover:border-accent hover:scale-110">
-                <i class="fa-solid fa-credit-card"></i>
+
+            <!-- Right: 3 In-depth Product Feature Cards with Image on Left, Details on Right (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col justify-between gap-4">
+              <!-- Item 1 -->
+              <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center hover:border-accent transition-all duration-300">
+                <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border">
+                  <img src="assets/home2.jpg" alt="Organic Apples" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Top Orchard Pick</span>
+                      <span class="text-xs font-semibold text-secondary-text">★ 4.9 (1.2k reviews)</span>
+                    </div>
+                    <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Crisp Honeycrisp Apples</h4>
+                    <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Picked at peak sugar maturity. Ultra crisp, juicy, and perfect for fresh snacking.</p>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                    <span class="text-accent font-extrabold text-lg sm:text-xl">$2.99 <span class="text-xs font-normal text-secondary-text">/ kg</span></span>
+                    <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                      <i class="fa-solid fa-plus text-[10px]"></i> Add
+                    </button>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-base sm:text-xl font-bold text-primary-text mb-2 sm:mb-3">2. Place Your Order</h3>
-              <p class="text-secondary-text text-sm sm:text-base">Choose a delivery slot, pay online or cash on delivery, and confirm your order.</p>
-            </div>
-            <div class="relative z-10 flex flex-col items-center reveal">
-              <div class="w-16 h-16 sm:w-20 md:w-24 sm:h-20 md:h-24 rounded-full bg-background border-4 border-border text-accent flex items-center justify-center text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 shadow-md transition-all duration-300 hover:border-accent hover:scale-110">
-                <i class="fa-solid fa-boxes-packing"></i>
+
+              <!-- Item 2 -->
+              <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center hover:border-accent transition-all duration-300">
+                <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border">
+                  <img src="assets/home3.jpg" alt="Farm Carrots" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Freshly Pulled</span>
+                      <span class="text-xs font-semibold text-secondary-text">★ 4.8 (850 reviews)</span>
+                    </div>
+                    <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Rainbow Heirloom Carrots</h4>
+                    <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Earthy sweetness with rich carotenoids. Roasted, steamed, or eaten raw with dip.</p>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                    <span class="text-accent font-extrabold text-lg sm:text-xl">$1.49 <span class="text-xs font-normal text-secondary-text">/ bunch</span></span>
+                    <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                      <i class="fa-solid fa-plus text-[10px]"></i> Add
+                    </button>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-base sm:text-xl font-bold text-primary-text mb-2 sm:mb-3">3. We Pack It Fresh</h3>
-              <p class="text-secondary-text text-sm sm:text-base">Our team hand-picks and packs your order with care, keeping items fresh and secure.</p>
-            </div>
-            <div class="relative z-10 flex flex-col items-center reveal">
-              <div class="w-16 h-16 sm:w-20 md:w-24 sm:h-20 md:h-24 rounded-full bg-background border-4 border-border text-accent flex items-center justify-center text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 shadow-md transition-all duration-300 hover:border-accent hover:scale-110">
-                <i class="fa-solid fa-truck-fast"></i>
+
+              <!-- Item 3 -->
+              <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center hover:border-accent transition-all duration-300">
+                <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border">
+                  <img src="assets/home4.jpg" alt="Sourdough Bread" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Bakery Artisan</span>
+                      <span class="text-xs font-semibold text-secondary-text">★ 5.0 (2.1k reviews)</span>
+                    </div>
+                    <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Golden Sourdough Batard</h4>
+                    <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Naturally leavened loaf with a caramelized crust and a soft, tangy, melt-in-mouth crumb.</p>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                    <span class="text-accent font-extrabold text-lg sm:text-xl">$4.50 <span class="text-xs font-normal text-secondary-text">/ loaf</span></span>
+                    <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                      <i class="fa-solid fa-plus text-[10px]"></i> Add
+                    </button>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-base sm:text-xl font-bold text-primary-text mb-2 sm:mb-3">4. Delivered to You</h3>
-              <p class="text-secondary-text text-sm sm:text-base">Get your groceries delivered within 30 minutes. Track your order in real time.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── SECTION 6: DAILY DEALS ─── -->
+      <!-- ─── SECTION 8: THE FRESHMART PROMISE (SPLIT EDITORIAL STORY WITH BENEFIT ACCORDIONS) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 reveal">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Daily Deals</h2>
-          <p class="text-secondary-text text-base sm:text-lg">Grab these deals before they're gone. Fresh stock added daily.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-          <div class="bg-hover p-5 sm:p-8 rounded-2xl border border-border card-hover relative reveal">
-            <div class="absolute top-4 right-4 bg-accent text-black px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold">20% OFF</div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-background border border-border flex items-center justify-center mb-4 sm:mb-6">
-              <i class="fa-solid fa-apple-whole text-2xl sm:text-3xl text-accent"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-2">Organic Apples</h3>
-            <p class="text-secondary-text mb-4 text-sm sm:text-base">Crisp, sweet, and locally grown. Perfect for snacking.</p>
-            <div class="flex items-center gap-3">
-              <span class="text-xl sm:text-2xl font-bold text-accent">$2.99</span>
-              <span class="text-secondary-text line-through text-sm sm:text-base">$3.74</span>
-            </div>
-          </div>
-          <div class="bg-hover p-5 sm:p-8 rounded-2xl border border-border card-hover relative reveal">
-            <div class="absolute top-4 right-4 bg-accent text-black px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold">15% OFF</div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-background border border-border flex items-center justify-center mb-4 sm:mb-6">
-              <i class="fa-solid fa-carrot text-2xl sm:text-3xl text-accent"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-2">Farm Carrots</h3>
-            <p class="text-secondary-text mb-4 text-sm sm:text-base">Sweet and crunchy. Great for salads and cooking.</p>
-            <div class="flex items-center gap-3">
-              <span class="text-xl sm:text-2xl font-bold text-accent">$1.49</span>
-              <span class="text-secondary-text line-through text-sm sm:text-base">$1.75</span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center reveal">
+          <!-- Left: Big Visual with floating Trust Badges (5 cols) -->
+          <div class="lg:col-span-5 relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-border relative aspect-[4/5] bg-hover">
+              <img src="assets/hw1.jpg" alt="FreshMart Quality Promise" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+              
+              <!-- Floating Stamp -->
+              <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 p-4 sm:p-5 rounded-2xl bg-background border border-border shadow-2xl backdrop-blur-md">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-primary-text text-sm sm:text-base">100% Quality Assurance</h4>
+                    <p class="text-xs text-secondary-text">Hand-inspected before leaving our temperature-controlled hub</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bg-hover p-5 sm:p-8 rounded-2xl border border-border card-hover relative reveal">
-            <div class="absolute top-4 right-4 bg-accent text-black px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold">FRESH</div>
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-background border border-border flex items-center justify-center mb-4 sm:mb-6">
-              <i class="fa-solid fa-bread-slice text-2xl sm:text-3xl text-accent"></i>
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-text mb-2">Sourdough Loaf</h3>
-            <p class="text-secondary-text mb-4 text-sm sm:text-base">Baked fresh this morning. Crusty outside, soft inside.</p>
-            <div class="flex items-center gap-3">
-              <span class="text-xl sm:text-2xl font-bold text-accent">$4.50</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- ─── SECTION 7: BEST SELLERS & FRESH PICKS ─── -->
-      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
-        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-16 gap-4 reveal">
+          <!-- Right: Clear Editorial Hierarchy (7 cols) -->
+          <div class="lg:col-span-7 space-y-6 text-start">
             <div>
-              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Best Sellers & Fresh Picks</h2>
-              <p class="text-secondary-text text-base sm:text-lg">Handpicked selections from our freshest stock.</p>
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Uncompromising Standards</span>
+              <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-primary-text leading-tight mb-4">
+                The FreshMart Promise:<br/>
+                <span class="text-accent">Four Commitments We Never Break.</span>
+              </h2>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed">
+                We believe you should never have to gamble on produce freshness or guess delivery fees. That's why our service is backed by four unconditional guarantees.
+              </p>
             </div>
-            <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">View All</a>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-              <div class="h-32 sm:h-44 overflow-hidden">
-                <img src="assets/home2.jpg" alt="Apples" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+
+            <!-- 4 Structured Pillar Blocks -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 sm:p-5 rounded-2xl bg-hover border border-border hover:border-accent transition-all">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-3">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1">Instant Freshness Guarantee</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Not fresh on arrival? One-click replacement or immediate refund right in your app.</p>
               </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Organic Apples</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-2">Fresh & Crisp</p>
-                <span class="text-accent font-bold mt-auto  text-sm sm:text-lg">$2.99/kg</span>
+
+              <div class="p-4 sm:p-5 rounded-2xl bg-hover border border-border hover:border-accent transition-all">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-3">
+                  <i class="fa-solid fa-stopwatch"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1">Punctual 30-Min Delivery</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Every slot honored. If we're ever more than 15 minutes late, your next fee is on us.</p>
+              </div>
+
+              <div class="p-4 sm:p-5 rounded-2xl bg-hover border border-border hover:border-accent transition-all">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-3">
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1">Honest Transparent Pricing</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Zero surge multipliers during bad weather. The price on the screen is exactly what you pay.</p>
+              </div>
+
+              <div class="p-4 sm:p-5 rounded-2xl bg-hover border border-border hover:border-accent transition-all">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg mb-3">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1">Real Human Support</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Local store managers answer our support line in under 2 minutes. No endless bots.</p>
               </div>
             </div>
-            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-              <div class="h-32 sm:h-44 overflow-hidden">
-                <img src="assets/home3.jpg" alt="Carrots" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Farm Carrots</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-2">Sweet & Crunchy</p>
-                <span class="text-accent font-bold mt-auto  text-sm sm:text-lg">$1.49</span>
-              </div>
-            </div>
-            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-              <div class="h-32 sm:h-44 overflow-hidden">
-                <img src="assets/home4.jpg" alt="Bread" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Sourdough Bread</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-2">Baked Daily</p>
-                <span class="text-accent font-bold mt-auto  text-sm sm:text-lg">$4.50</span>
-              </div>
-            </div>
-            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-              <div class="h-32 sm:h-44 overflow-hidden">
-                <img src="assets/home7.jpg" alt="Milk" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-              </div>
-              <div class="p-3 sm:p-5 flex flex-col flex-grow">
-                <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Organic Milk</h4>
-                <p class="text-xs sm:text-sm text-secondary-text mb-2">Local Dairy</p>
-                <span class="text-accent font-bold mt-auto  text-sm sm:text-lg">$3.20/L</span>
-              </div>
+
+            <div class="pt-2">
+              <a href="about.html" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md inline-flex items-center gap-2">
+                Read Our Story & Farm Standards <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── SECTION 8: THE FRESHMART PROMISE ─── -->
-      <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
-          <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Our Promise</span>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">The FreshMart Promise</h2>
-          <p class="text-secondary-text text-base sm:text-lg">Four commitments we make to every household we serve — no exceptions, no excuses.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
-          <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-            <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-shield-halved text-2xl"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Freshness Guarantee</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">If it's not fresh when it arrives, we replace it or refund you instantly — no questions asked.</p>
-          </div>
-          <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-            <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-stopwatch text-2xl"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">On-Time Delivery</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Every delivery window is honoured. Late order? Your next delivery fee is on us.</p>
-          </div>
-          <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-            <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-tag text-2xl"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Honest Pricing</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">The price you see is what you pay. No surge fees, no last-minute charges, no surprises.</p>
-          </div>
-          <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-            <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-              <i class="fa-solid fa-headset text-2xl"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Human Support</h3>
-            <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Real people, always reachable. Call, chat, or email — average response time is under 2 hours.</p>
-          </div>
-        </div>
-      </section>
 
       <!-- ─── SECTION 9: DELIVERY INFO ─── -->
       <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">

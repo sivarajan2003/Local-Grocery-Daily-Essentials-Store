@@ -519,109 +519,301 @@
         </div>
       </section>
 
-      <!-- ─── SECTION 2: FEATURED COUPON CODES (4 COUPONS) ─── -->
-      <!-- ─── SECTION 2: FEATURED COUPON CODES (REDESIGNED) ─── -->
-<section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
-  <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
-      <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Coupon Codes</span>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Copy, Paste, Save Instantly</h2>
-      <p class="text-secondary-text text-base sm:text-lg">Use these codes at checkout — valid on all orders over $30.</p>
-    </div>
+      <!-- ─── SECTION 2: DIGITAL VOUCHER WALLET (OPEN PASS LAYOUT) ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
+            <div class="max-w-2xl text-start">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Instant Wallet Savings</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Claim Your Digital Vouchers</h2>
+              <p class="text-secondary-text text-sm sm:text-base">One-click copy codes that automatically apply at final checkout on qualified baskets.</p>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-secondary-text bg-background border border-border px-3.5 py-2 rounded-xl shrink-0">
+              <i class="fa-solid fa-circle-check text-accent"></i> All 4 codes active today
+            </div>
+          </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <!-- Open Voucher Passes (2x2 Asymmetric Ticket Strips) -->
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-stretch reveal">
+            <!-- Voucher 1 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <!-- Left Stub -->
+              <div class="sm:w-44 md:w-48 bg-gradient-to-br from-green-500 to-green-700 p-5 sm:p-6 flex flex-row sm:flex-col justify-between items-center sm:items-start text-white shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-green-100">Welcome Pass</span>
+                <div class="text-center sm:text-start my-auto py-1 sm:py-0">
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$10</p>
+                  <p class="text-xs text-green-100 mt-1">Instant deduction</p>
+                </div>
+                <div class="text-[10px] text-green-200 font-medium">New Shoppers</div>
+              </div>
+              <!-- Right Details -->
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
+                <div>
+                  <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1.5">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg leading-snug">First Neighbourhood Order</h3>
+                    <span class="text-xs font-semibold text-secondary-text whitespace-nowrap">Min spend $30</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Enjoy $10 off your entire opening basket across fresh fruits, pantry staples, and artisan bakery.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border gap-2">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">FRESH10</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Coupon 1 -->
-      <div class="coupon-card h-full flex flex-col bg-background rounded-2xl border-2 border-dashed border-accent overflow-hidden reveal relative">
-        <div class="bg-gradient-to-br from-green-500 to-green-700 p-5 sm:p-6 text-center relative">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur mb-3 text-white">
-            <i class="fa-solid fa-gift text-lg"></i>
-          </div>
-          <p class="text-white/80 text-xs font-semibold uppercase tracking-wider mb-1">First Order</p>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1">$10</p>
-          <p class="text-white/80 text-xs">Off your first order</p>
-        </div>
-        <div class="coupon-dashed p-4 sm:p-5 text-center">
-          <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mb-2">Code</p>
-          <div class="flex items-center justify-center gap-2 bg-hover border border-border rounded-lg px-3 py-2.5">
-            <span class="font-extrabold text-accent text-sm tracking-widest">FRESH10</span>
-            <button class="text-accent hover:text-white hover:bg-accent rounded p-1 transition" title="Copy">
-              <i class="fa-solid fa-copy text-xs"></i>
-            </button>
-          </div>
-          <p class="text-[10px] sm:text-xs text-secondary-text mt-2">Min. spend $30</p>
-        </div>
-      </div>
+            <!-- Voucher 2 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <!-- Left Stub -->
+              <div class="sm:w-44 md:w-48 bg-gradient-to-br from-emerald-600 to-teal-800 p-5 sm:p-6 flex flex-row sm:flex-col justify-between items-center sm:items-start text-white shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-teal-100">Zero Delivery</span>
+                <div class="text-center sm:text-start my-auto py-1 sm:py-0">
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$0</p>
+                  <p class="text-xs text-teal-100 mt-1">Free express slot</p>
+                </div>
+                <div class="text-[10px] text-teal-200 font-medium">No Minimum</div>
+              </div>
+              <!-- Right Details -->
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
+                <div>
+                  <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1.5">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg leading-snug">Complimentary Doorstep Delivery</h3>
+                    <span class="text-xs font-semibold text-secondary-text whitespace-nowrap">Any basket size</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    We waive our standard express dispatch fee completely. Real-time temperature chilled logistics.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border gap-2">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">FREESHIP</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Coupon 2 -->
-      <div class="coupon-card h-full flex flex-col bg-background rounded-2xl border-2 border-dashed border-accent overflow-hidden reveal relative">
-        <div class="bg-gradient-to-br from-green-500 to-green-700 p-5 sm:p-6 text-center relative">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur mb-3 text-white">
-            <i class="fa-solid fa-truck text-lg"></i>
-          </div>
-          <p class="text-white/80 text-xs font-semibold uppercase tracking-wider mb-1">Free Delivery</p>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1">$0</p>
-          <p class="text-white/80 text-xs">Delivery fee waived</p>
-        </div>
-        <div class="coupon-dashed p-4 sm:p-5 text-center">
-          <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mb-2">Code</p>
-          <div class="flex items-center justify-center gap-2 bg-hover border border-border rounded-lg px-3 py-2.5">
-            <span class="font-extrabold text-accent text-sm tracking-widest">FREESHIP</span>
-            <button class="text-accent hover:text-white hover:bg-accent rounded p-1 transition" title="Copy">
-              <i class="fa-solid fa-copy text-xs"></i>
-            </button>
-          </div>
-          <p class="text-[10px] sm:text-xs text-secondary-text mt-2">No minimum</p>
-        </div>
-      </div>
+            <!-- Voucher 3 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <!-- Left Stub -->
+              <div class="sm:w-44 md:w-48 bg-gradient-to-br from-green-600 to-lime-700 p-5 sm:p-6 flex flex-row sm:flex-col justify-between items-center sm:items-start text-white shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-lime-100">Farm Bounty</span>
+                <div class="text-center sm:text-start my-auto py-1 sm:py-0">
+                  <p class="text-3xl sm:text-4xl font-black leading-none">20%</p>
+                  <p class="text-xs text-lime-100 mt-1">Orchard & veggies</p>
+                </div>
+                <div class="text-[10px] text-lime-200 font-medium">Harvest Pass</div>
+              </div>
+              <!-- Right Details -->
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
+                <div>
+                  <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1.5">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg leading-snug">Organic Harvest Discount</h3>
+                    <span class="text-xs font-semibold text-secondary-text whitespace-nowrap">Produce aisle only</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Take 20% off all leafy greens, root vegetables, seasonal berries, and heirloom tomatoes.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border gap-2">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">VEGGIE20</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Coupon 3 -->
-      <div class="coupon-card h-full flex flex-col bg-background rounded-2xl border-2 border-dashed border-accent overflow-hidden reveal relative">
-        <div class="bg-gradient-to-br from-green-500 to-green-700 p-5 sm:p-6 text-center relative">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur mb-3 text-white">
-            <i class="fa-solid fa-percent text-lg"></i>
+            <!-- Voucher 4 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <!-- Left Stub -->
+              <div class="sm:w-44 md:w-48 bg-gradient-to-br from-emerald-700 to-green-900 p-5 sm:p-6 flex flex-row sm:flex-col justify-between items-center sm:items-start text-white shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-green-100">Loyalty Perk</span>
+                <div class="text-center sm:text-start my-auto py-1 sm:py-0">
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$15</p>
+                  <p class="text-xs text-green-100 mt-1">Pantry restock</p>
+                </div>
+                <div class="text-[10px] text-green-200 font-medium">Repeat Orders</div>
+              </div>
+              <!-- Right Details -->
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between min-w-0">
+                <div>
+                  <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1.5">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg leading-snug">Household Re-stock Reward</h3>
+                    <span class="text-xs font-semibold text-secondary-text whitespace-nowrap">On $75+ baskets</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Save $15 when you bundle weekly essentials: dairy, grains, honey, and fresh kitchen basics.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border gap-2">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">LOYAL15</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="text-white/80 text-xs font-semibold uppercase tracking-wider mb-1">Save 20%</p>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1">20%</p>
-          <p class="text-white/80 text-xs">On fresh produce</p>
         </div>
-        <div class="coupon-dashed p-4 sm:p-5 text-center">
-          <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mb-2">Code</p>
-          <div class="flex items-center justify-center gap-2 bg-hover border border-border rounded-lg px-3 py-2.5">
-            <span class="font-extrabold text-accent text-sm tracking-widest">VEGGIE20</span>
-            <button class="text-accent hover:text-white hover:bg-accent rounded p-1 transition" title="Copy">
-              <i class="fa-solid fa-copy text-xs"></i>
-            </button>
-          </div>
-          <p class="text-[10px] sm:text-xs text-secondary-text mt-2">Fruits & veggies only</p>
         </div>
-      </div>
+      </section>
 
-      <!-- Coupon 4 -->
-      <div class="coupon-card h-full flex flex-col bg-background rounded-2xl border-2 border-dashed border-accent overflow-hidden reveal relative">
-        <div class="bg-gradient-to-br from-green-500 to-green-700 p-5 sm:p-6 text-center relative">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur mb-3 text-white">
-            <i class="fa-solid fa-star text-lg"></i>
+      <!-- ─── SECTION 2: DIGITAL VOUCHER WALLET (OPEN PASS LAYOUT) ─── -->
+      <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
+            <div class="max-w-2xl text-start">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Instant Wallet Savings</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Claim Your Digital Vouchers</h2>
+              <p class="text-secondary-text text-sm sm:text-base">One-click copy codes that automatically apply at final checkout on qualified baskets.</p>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-secondary-text bg-background border border-border px-3.5 py-2 rounded-xl shrink-0">
+              <i class="fa-solid fa-circle-check text-accent"></i> All 4 codes active today
+            </div>
           </div>
-          <p class="text-white/80 text-xs font-semibold uppercase tracking-wider mb-1">Loyalty Reward</p>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1">$15</p>
-          <p class="text-white/80 text-xs">On $75+ orders</p>
-        </div>
-        <div class="coupon-dashed p-4 sm:p-5 text-center">
-          <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mb-2">Code</p>
-          <div class="flex items-center justify-center gap-2 bg-hover border border-border rounded-lg px-3 py-2.5">
-            <span class="font-extrabold text-accent text-sm tracking-widest">LOYAL15</span>
-            <button class="text-accent hover:text-white hover:bg-accent rounded p-1 transition" title="Copy">
-              <i class="fa-solid fa-copy text-xs"></i>
-            </button>
-          </div>
-          <p class="text-[10px] sm:text-xs text-secondary-text mt-2">For returning customers</p>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section>
+          <!-- Open Voucher Passes (2x2 Asymmetric Ticket Strips) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 reveal">
+            <!-- Voucher 1 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <div class="sm:w-44 bg-gradient-to-br from-green-500 to-green-700 p-6 flex flex-col justify-between text-white text-center sm:text-start shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-green-100">Welcome Pass</span>
+                <div>
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$10</p>
+                  <p class="text-xs text-green-100 mt-1">Instant deduction</p>
+                </div>
+                <div class="text-[10px] text-green-200 mt-2 sm:mt-0 font-medium">New Shoppers</div>
+              </div>
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg">First Neighbourhood Order</h3>
+                    <span class="text-xs font-semibold text-secondary-text">Min spend $30</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Enjoy $10 off your entire opening basket across fresh fruits, pantry staples, and artisan bakery.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">FRESH10</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voucher 2 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <div class="sm:w-44 bg-gradient-to-br from-emerald-600 to-teal-800 p-6 flex flex-col justify-between text-white text-center sm:text-start shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-teal-100">Zero Delivery</span>
+                <div>
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$0</p>
+                  <p class="text-xs text-teal-100 mt-1">Free express slot</p>
+                </div>
+                <div class="text-[10px] text-teal-200 mt-2 sm:mt-0 font-medium">No Minimum</div>
+              </div>
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg">Complimentary Doorstep Delivery</h3>
+                    <span class="text-xs font-semibold text-secondary-text">Any basket size</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    We waive our standard express dispatch fee completely. Real-time temperature chilled logistics.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">FREESHIP</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voucher 3 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <div class="sm:w-44 bg-gradient-to-br from-green-600 to-lime-700 p-6 flex flex-col justify-between text-white text-center sm:text-start shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-lime-100">Farm Bounty</span>
+                <div>
+                  <p class="text-3xl sm:text-4xl font-black leading-none">20%</p>
+                  <p class="text-xs text-lime-100 mt-1">Orchard & veggies</p>
+                </div>
+                <div class="text-[10px] text-lime-200 mt-2 sm:mt-0 font-medium">Harvest Pass</div>
+              </div>
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg">Organic Harvest Discount</h3>
+                    <span class="text-xs font-semibold text-secondary-text">Produce aisle only</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Take 20% off all leafy greens, root vegetables, seasonal berries, and heirloom tomatoes.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">VEGGIE20</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voucher 4 -->
+            <div class="bg-background rounded-3xl border border-border overflow-hidden flex flex-col sm:flex-row shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <div class="sm:w-44 bg-gradient-to-br from-emerald-700 to-green-900 p-6 flex flex-col justify-between text-white text-center sm:text-start shrink-0 relative">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-green-100">Loyalty Perk</span>
+                <div>
+                  <p class="text-3xl sm:text-4xl font-black leading-none">$15</p>
+                  <p class="text-xs text-green-100 mt-1">Pantry restock</p>
+                </div>
+                <div class="text-[10px] text-green-200 mt-2 sm:mt-0 font-medium">Repeat Orders</div>
+              </div>
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <h3 class="font-bold text-primary-text text-base sm:text-lg">Household Re-stock Reward</h3>
+                    <span class="text-xs font-semibold text-secondary-text">On $75+ baskets</span>
+                  </div>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-4">
+                    Save $15 when you bundle weekly essentials: dairy, grains, honey, and fresh kitchen basics.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div class="flex items-center gap-2 bg-hover px-3 py-1.5 rounded-xl border border-border">
+                    <span class="font-mono font-extrabold text-accent text-sm tracking-wider">LOYAL15</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-xl font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-copy text-[10px]"></i> Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ─── SECTION 3: FEATURED OFFER PRODUCTS (4 CARDS) ─── -->
      <!-- ─── SECTION 3: FEATURED OFFERS (REDESIGNED) ─── -->
 <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
@@ -766,61 +958,104 @@
   </div>
 </section>
 
-      <!-- ─── SECTION 4: BUNDLE DEALS (3 CARDS) ─── -->
+      <!-- ─── SECTION 4: BUNDLE KITS (EDITORIAL PANORAMA & CULINARY SETS) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
         <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
-            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Bundle Deals</span>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Buy More, Save More</h2>
-            <p class="text-secondary-text text-base sm:text-lg">Curated bundles that bundle savings on top of savings.</p>
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
+            <div class="max-w-2xl text-start">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">All-In-One Hampers</span>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Curated Kitchen Bundles</h2>
+              <p class="text-secondary-text text-sm sm:text-base">Farm-matched weekly provision hampers packed together at substantial multi-item discounts.</p>
+            </div>
+            <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap inline-flex items-center gap-2">
+              Browse All Bundles <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal flex flex-col">
-              <div class="h-40 sm:h-56 overflow-hidden relative shrink-0">
-                <img src="assets/of5.avif" alt="Family Produce Box" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">SAVE $12</span>
-              </div>
-              <div class="p-5 sm:p-8 flex flex-col flex-grow">
-                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Family Produce Box</h3>
-                <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">10kg mixed seasonal fruits & vegetables — enough for a family of four for a week.</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <div class="flex items-baseline gap-2">
-                    <span class="text-accent font-bold text-xl sm:text-2xl">$29.99</span>
-                    <span class="text-secondary-text line-through text-sm">$41.99</span>
-                  </div>
-                  <button class="btn-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-xs whitespace-nowrap shrink-0">Add Box</button>
+          <!-- Asymmetric Bundle Editorial Layout: 1 Hero Hamper (7 cols) + 2 Stacked Sets (5 cols) -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch reveal">
+            <!-- Main Hero Hamper: Family Produce Box -->
+            <div class="lg:col-span-7 bg-background rounded-3xl border border-border overflow-hidden flex flex-col justify-between shadow-sm group hover:border-accent transition-all duration-300">
+              <div class="relative h-64 sm:h-80 overflow-hidden">
+                <img src="assets/of5.avif" alt="Family Produce Box" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute top-5 left-5 bg-red-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
+                  <i class="fa-solid fa-fire text-[10px]"></i> SAVE $12.00
+                </span>
+                <div class="absolute bottom-5 left-5 right-5 text-white">
+                  <span class="text-[10px] font-bold text-accent uppercase tracking-widest">7-Day Household Provision</span>
+                  <h3 class="text-2xl sm:text-3xl font-extrabold mt-1">Weekly Family Orchard & Harvest Box</h3>
                 </div>
               </div>
-            </div>            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal flex flex-col">
-              <div class="h-40 sm:h-56 overflow-hidden relative shrink-0">
-                 <img src="assets/of6.avif"alt="Pantry Staples Bundle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">SAVE $8</span>
-              </div>
-              <div class="p-5 sm:p-8 flex flex-col flex-grow">
-                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Pantry Staples Bundle</h3>
-                <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">Rice, pasta, olive oil, honey, and canned goods — everything for a well-stocked pantry.</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <div class="flex items-baseline gap-2">
-                    <span class="text-accent font-bold text-xl sm:text-2xl">$34.50</span>
-                    <span class="text-secondary-text line-through text-sm">$42.50</span>
+
+              <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-4">
+                <p class="text-secondary-text text-xs sm:text-sm md:text-base leading-relaxed">
+                  10 kilograms of hand-selected, zero-waste seasonal fruits and earthy vegetables. Includes potatoes, carrots, kale, vine tomatoes, crisp apples, and fresh bananas.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 text-[11px] text-secondary-text font-semibold">
+                  <span class="bg-hover px-2.5 py-1 rounded-lg border border-border">✓ 4-Person Weekly Capacity</span>
+                  <span class="bg-hover px-2.5 py-1 rounded-lg border border-border">✓ 100% Recyclable Crate</span>
+                  <span class="bg-hover px-2.5 py-1 rounded-lg border border-border">✓ Harvested Same Morning</span>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-border">
+                  <div>
+                    <span class="text-2xl sm:text-3xl font-extrabold text-accent">$29.99</span>
+                    <span class="text-secondary-text text-sm line-through ml-2">$41.99</span>
                   </div>
-                  <button class="btn-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-xs whitespace-nowrap shrink-0">Add Bundle</button>
+                  <button class="btn-primary px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md inline-flex items-center gap-2">
+                    <i class="fa-solid fa-cart-plus text-xs"></i> Add Crate to Order
+                  </button>
                 </div>
               </div>
-            </div>            <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal sm:col-span-2 lg:col-span-1 flex flex-col">
-              <div class="h-40 sm:h-56 overflow-hidden relative shrink-0">
-                 <img src="assets/of7.avif" alt="Breakfast Essentials Kit" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10">SAVE $6</span>
-              </div>
-              <div class="p-5 sm:p-8 flex flex-col flex-grow">
-                <h3 class="text-lg sm:text-2xl font-bold text-primary-text mb-2 sm:mb-3 line-clamp-2 min-h-[3.5rem] sm:min-h-[4rem]">Breakfast Essentials Kit</h3>
-                <p class="text-secondary-text mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">Eggs, milk, yogurt, bread, honey, and seasonal fruit — start every morning right.</p>
-                <div class="flex items-center justify-between mt-auto">
-                  <div class="flex items-baseline gap-2">
-                    <span class="text-accent font-bold text-xl sm:text-2xl">$18.90</span>
-                    <span class="text-secondary-text line-through text-sm">$24.90</span>
+            </div>
+
+            <!-- 2 Stacked Specialty Kits (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col justify-between gap-5">
+              <!-- Kit 1: Pantry Staples -->
+              <div class="bg-background rounded-3xl border border-border p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:border-accent transition-all duration-300 flex-1">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0 border border-border relative">
+                    <img src="assets/of6.avif" alt="Pantry Staples Bundle" class="w-full h-full object-cover">
+                    <span class="absolute top-1.5 left-1.5 bg-red-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">SAVE $8</span>
                   </div>
-                  <button class="btn-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-xs whitespace-nowrap shrink-0">Add Kit</button>
+                  <div class="flex-1 min-w-0">
+                    <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Essential Cupboard</span>
+                    <h4 class="font-bold text-primary-text text-base sm:text-lg truncate">Master Pantry Staples Set</h4>
+                    <p class="text-secondary-text text-xs line-clamp-2 mt-0.5">Organic basmati rice, bronze-cut pasta, cold-pressed olive oil & wild honey.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div>
+                    <span class="text-xl font-extrabold text-accent">$34.50</span>
+                    <span class="text-xs text-secondary-text line-through ml-1.5">$42.50</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Add Bundle
+                  </button>
+                </div>
+              </div>
+
+              <!-- Kit 2: Breakfast Essentials Kit -->
+              <div class="bg-background rounded-3xl border border-border p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:border-accent transition-all duration-300 flex-1">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0 border border-border relative">
+                    <img src="assets/of7.avif" alt="Breakfast Essentials Kit" class="w-full h-full object-cover">
+                    <span class="absolute top-1.5 left-1.5 bg-red-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">SAVE $6</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Morning Table</span>
+                    <h4 class="font-bold text-primary-text text-base sm:text-lg truncate">Artisan Breakfast Essentials</h4>
+                    <p class="text-secondary-text text-xs line-clamp-2 mt-0.5">Free-range eggs (dozen), whole milk, sourdough loaf, Greek yogurt & berries.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-border">
+                  <div>
+                    <span class="text-xl font-extrabold text-accent">$18.90</span>
+                    <span class="text-xs text-secondary-text line-through ml-1.5">$24.90</span>
+                  </div>
+                  <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Add Bundle
+                  </button>
                 </div>
               </div>
             </div>
@@ -927,7 +1162,8 @@
 
           <!-- Final CTA -->
           <!-- Final CTA — background image ob1 -->
-<div class="final-cta-bg rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center flex flex-col items-center shadow-2xl relative overflow-hidden mt-12 sm:mt-20 reveal">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 sm:mt-20">
+  <div class="final-cta-bg rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center flex flex-col items-center shadow-2xl relative overflow-hidden reveal">
   <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">Never Miss a FreshMart Offer.</h2>
   <p class="text-white/95 text-sm sm:text-base md:text-lg max-w-2xl mb-6 sm:mb-8 px-2">Subscribe for offer alerts and get $10 off your first order. Use code FRESH10 at checkout.</p>
   <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
@@ -938,6 +1174,7 @@
       <i class="fa-solid fa-phone"></i> Talk to Us
     </a>
   </div>
+</div>
 </div>
         </div>
       </section>

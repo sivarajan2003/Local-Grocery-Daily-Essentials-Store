@@ -284,9 +284,22 @@
       }
       #main-footer .social-btn:hover {
         background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
-        color: white;
+        color: #FFFFFF !important;
         transform: translateY(-3px);
         border-color: transparent;
+        box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+      }
+      #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover {
+        background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+        color: #FFFFFF !important;
+        border-color: #22C55E;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.55);
+      }
+      html[data-theme='dark'] #main-footer .social-btn:hover i {
+        color: #FFFFFF !important;
       }
       .footer-bottom {
         border-top: 1px solid #E5E7EB;
@@ -587,83 +600,169 @@
     <!-- ══════════ MAIN — HOME 2 CONTENT ══════════ -->
     <main class="flex-grow pt-[70px] sm:pt-[80px]">
 
-      <!-- ─── SECTION 1: HERO (SPLIT LAYOUT — DIFFERENT FROM HOME 1) ─── -->
-      <section class="relative overflow-hidden bg-cover bg-center border-b border-border/20" style="background-image: url('assets/hbg2.avif');">
-        <div class="hero-overlay absolute inset-0 pointer-events-none"></div>
-        <div class="relative z-10 px-4 sm:px-6 lg:px-8 xl:px-10 py-10 sm:py-16 lg:py-20 max-w-[1600px] mx-auto">
-        <div class="hero-split items-center">
-          <!-- Left: Text -->
-          <div class="flex flex-col items-start text-start space-y-5 sm:space-y-6 reveal">
-            <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-hover border border-border shadow-sm">
-              <span class="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-accent"></span>
-              </span>
-              <span class="text-accent font-bold text-[10px] sm:text-xs tracking-wide uppercase">New Season · Fresh Picks</span>
+      <!-- ─── SECTION 1: HERO (PANORAMIC MARKET HUB & LIVE SEARCH SHOWCASE) ─── -->
+      <section class="relative overflow-hidden border-b border-border bg-gradient-to-b from-hover/60 via-background to-background pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20">
+        <!-- Ambient decorative lighting -->
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-accent/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
+          
+          <!-- Top Row: Editorial Centered Header & Direct Micro-Search Bar -->
+          <div class="text-center max-w-4xl mx-auto space-y-4 sm:space-y-6 mb-10 sm:mb-14 reveal">
+            <!-- Dynamic Live Tag -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/25 text-accent font-bold text-xs uppercase tracking-wider shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+              <span>Morning Harvest Hub · Dispatched in 30 Mins</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-text leading-tight">
-              Your Local Market,<br/>
-              <span class="text-accent">Delivered Fresh.</span>
+
+            <!-- Distinct Headline & Narrative -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary-text tracking-tight leading-[1.12]">
+              The Neighbourhood Pantry,<br/>
+              <span class="text-accent underline decoration-accent/30 decoration-wavy decoration-2">Straight From Local Farms.</span>
             </h1>
-            <p class="text-secondary-text text-base sm:text-lg max-w-xl leading-relaxed">
-              Handpicked from 40+ local farms and delivered to your door in 30 minutes. Because fresh food should be simple, affordable, and always in season.
+
+            <p class="text-secondary-text text-sm sm:text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Skip the crowded supermarket aisles. Hand-graded seasonal produce, warm morning bread, and pure organic dairy brought to your kitchen before breakfast.
             </p>
-            <div class="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4 w-full sm:w-auto">
-              <a href="shop.html" class="btn-primary px-5 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base shadow-lg flex-1 sm:flex-none justify-center">
-                Start Shopping <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-              <a href="about.html" class="btn-outline px-5 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base flex-1 sm:flex-none justify-center">
-                <i class="fa-solid fa-leaf text-xs"></i> Our Story
-              </a>
-            </div>
-            <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-4 w-full">
-              <div>
-                <p class="text-xl sm:text-3xl font-extrabold text-accent mb-1">40+</p>
-                <p class="text-[10px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider">Partner Farms</p>
+
+            <!-- Integrated Fast-Search Bar (Interactive Hero Exploration) -->
+            <div class="max-w-2xl mx-auto pt-2">
+              <div class="p-2 sm:p-2.5 rounded-2xl sm:rounded-full bg-background border-2 border-border focus-within:border-accent shadow-xl flex flex-col sm:flex-row items-center gap-2 transition-all">
+                <div class="flex items-center gap-3 px-3.5 py-1.5 w-full sm:w-auto flex-1">
+                  <i class="fa-solid fa-magnifying-glass text-accent text-base"></i>
+                  <input type="text" placeholder="Search 2,500+ fresh items (e.g. Sourdough, Apples, Milk)..." class="w-full bg-transparent text-primary-text text-xs sm:text-sm placeholder:text-secondary-text focus:outline-none">
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                  <a href="shop.html" class="btn-primary w-full sm:w-auto px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-full font-bold text-xs sm:text-sm shadow-md whitespace-nowrap justify-center">
+                    Find Fresh Food <i class="fa-solid fa-arrow-right text-xs"></i>
+                  </a>
+                </div>
               </div>
-              <div>
-                <p class="text-xl sm:text-3xl font-extrabold text-accent mb-1">30min</p>
-                <p class="text-[10px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider">Avg Delivery</p>
-              </div>
-              <div>
-                <p class="text-xl sm:text-3xl font-extrabold text-accent mb-1">100%</p>
-                <p class="text-[10px] sm:text-xs text-secondary-text font-semibold uppercase tracking-wider">Fresh Promise</p>
+
+              <!-- Quick Tag Pills -->
+              <div class="flex flex-wrap items-center justify-center gap-2 pt-3 text-xs text-secondary-text">
+                <span class="font-semibold text-primary-text">Trending now:</span>
+                <a href="fresh-picks.html" class="px-2.5 py-1 rounded-lg bg-hover border border-border hover:border-accent hover:text-accent transition-colors">Crisp Apples</a>
+                <a href="shop.html" class="px-2.5 py-1 rounded-lg bg-hover border border-border hover:border-accent hover:text-accent transition-colors">Artisan Sourdough</a>
+                <a href="organic.html" class="px-2.5 py-1 rounded-lg bg-hover border border-border hover:border-accent hover:text-accent transition-colors">Organic Whole Milk</a>
+                <a href="offers.html" class="px-2.5 py-1 rounded-lg bg-red-500/10 text-red-600 border border-red-500/20 font-bold hover:bg-red-500/20 transition-colors">Flash Deals -20%</a>
               </div>
             </div>
           </div>
 
-          <!-- Right: Image (h21.jpg) -->
-          <div class="relative w-full reveal">
-            <div class="absolute inset-0 bg-gradient-to-tr from-green-400 to-green-600 opacity-20 blur-3xl rounded-full translate-y-10"></div>
-            <div class="hero-img-wrapper relative shadow-2xl border border-border bg-hover">
-              <img src="assets/h21.jpg" alt="Fresh Market Produce" class="absolute inset-0 w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <!-- Floating Badge -->
-              <div class="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/20 shadow-lg">
-                <div class="flex items-center gap-2 sm:gap-3">
-                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
-                    <i class="fa-solid fa-truck-fast text-white text-xs sm:text-sm"></i>
+          <!-- Bottom Visual Showcase: Asymmetric Panoramic Feature Trio (Hero Center Billboard + 2 Interactive Live Feature Badges) -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch reveal">
+            <!-- Left Card: Live Dispatch Tracker Badge (3 Cols) -->
+            <div class="lg:col-span-3 rounded-3xl border border-border bg-background p-5 sm:p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-1 rounded-full">Zone 1 Delivery</span>
+                  <span class="flex h-2.5 w-2.5 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                  </span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-primary-text leading-snug">Average Drop-off Time</h3>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-4xl sm:text-5xl font-black text-accent font-mono">24</span>
+                  <span class="text-sm font-bold text-secondary-text">minutes</span>
+                </div>
+                <p class="text-xs text-secondary-text leading-relaxed">
+                  Temperature-chilled electric vans routed right from our neighbourhood hub.
+                </p>
+              </div>
+
+              <!-- Micro Driver Avatar Strip -->
+              <div class="pt-4 border-t border-border mt-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full border-2 border-accent overflow-hidden shrink-0">
+                    <img src="assets/hp1.jpg" alt="Driver courier" class="w-full h-full object-cover">
                   </div>
                   <div>
-                    <p class="text-[10px] sm:text-xs text-white font-semibold uppercase tracking-wider">Free Delivery</p>
-                    <p class="text-xs sm:text-sm font-bold text-white">On orders $30+</p>
+                    <p class="text-xs font-bold text-primary-text">14 couriers on duty</p>
+                    <p class="text-[10px] text-accent font-semibold">Ready for instant dispatch</p>
                   </div>
-                </div>
-              </div>
-              <!-- Bottom Caption -->
-              <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-10">
-                <div class="flex items-center gap-3 sm:gap-4">
-                  <div class="flex -space-x-2 sm:-space-x-3">
-                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white" style="background:#22C55E;">A</div>
-                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white" style="background:#16A34A;">B</div>
-                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white" style="background:#4ADE80;">C</div>
-                  </div>
-                  <p class="text-white text-xs sm:text-sm font-semibold">Join 5,000+ happy households</p>
                 </div>
               </div>
             </div>
+
+            <!-- Center Card: Panoramic Master Visual (6 Cols) -->
+            <div class="lg:col-span-6 relative rounded-3xl overflow-hidden border border-border min-h-[320px] sm:min-h-[420px] group shadow-2xl flex flex-col justify-end p-6 sm:p-8">
+              <img src="assets/h21.jpg" alt="Fresh Market Produce" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+              <!-- Top floating voucher chip -->
+              <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
+                <span class="backdrop-blur-md bg-black/60 border border-white/20 text-white font-bold text-xs px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <i class="fa-solid fa-gift text-accent"></i> Use Code: <span class="text-accent font-mono font-extrabold">FRESH10</span>
+                </span>
+              </div>
+
+              <!-- Bottom Story within Hero -->
+              <div class="relative z-10 space-y-2">
+                <span class="text-accent font-bold text-xs uppercase tracking-widest">Harvested 5:30 AM Today</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">40+ Partner Family Farms</h3>
+                <p class="text-white/85 text-xs sm:text-sm max-w-lg leading-relaxed">
+                  Zero warehouse cooling delays. Produce travels straight from local soil to your table within hours.
+                </p>
+                <div class="pt-2 flex items-center gap-4">
+                  <a href="about.html" class="text-white text-xs font-bold inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+                    Meet Our Local Farmers <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Card: Weekly Kitchen Metric & Guarantee (3 Cols) -->
+            <div class="lg:col-span-3 rounded-3xl border border-border bg-background p-5 sm:p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-green-700 bg-green-500/10 px-2.5 py-1 rounded-full">Community Trust</span>
+                  <i class="fa-solid fa-shield-heart text-accent text-sm"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-primary-text leading-snug">Zero-Waste Promise</h3>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-4xl sm:text-5xl font-black text-accent font-mono">100%</span>
+                  <span class="text-sm font-bold text-secondary-text">guarantee</span>
+                </div>
+                <p class="text-xs text-secondary-text leading-relaxed">
+                  If an apple isn't crisp or greens aren't fresh, tap once in the app for an instant full refund.
+                </p>
+              </div>
+
+              <!-- Customer Rating Strip -->
+              <div class="pt-4 border-t border-border mt-4">
+                <div class="flex items-center justify-between mb-1">
+                  <div class="flex text-yellow-400 text-xs gap-1">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                  <span class="text-xs font-extrabold text-primary-text">4.9 / 5.0</span>
+                </div>
+                <p class="text-[10px] text-secondary-text">Based on 5,200+ local verified orders</p>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <!-- Bottom Metric Strip (Distinct from Home 1's avatar stack) -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 sm:pt-10 border-t border-border/80 mt-8 sm:mt-12 text-center reveal">
+            <div class="p-3 rounded-2xl bg-hover/50">
+              <p class="text-2xl sm:text-3xl font-extrabold text-accent">2,500+</p>
+              <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mt-0.5">Pantry & Produce Items</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-hover/50">
+              <p class="text-2xl sm:text-3xl font-extrabold text-accent">50 Miles</p>
+              <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mt-0.5">Strict Sourcing Radius</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-hover/50">
+              <p class="text-2xl sm:text-3xl font-extrabold text-accent">Free Over $30</p>
+              <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mt-0.5">Express Doorstep Shipping</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-hover/50">
+              <p class="text-2xl sm:text-3xl font-extrabold text-accent">7 AM – 10 PM</p>
+              <p class="text-xs text-secondary-text font-semibold uppercase tracking-wider mt-0.5">Same-Day Delivery Hours</p>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -919,122 +1018,180 @@
         </div>
       </section>
 
-      <!-- ─── SECTION 5: FEATURED PRODUCTS (CAROUSEL-LIKE GRID) ─── -->
+      <!-- ─── SECTION 5: FEATURED THIS WEEK (OPEN EDITORIAL SHOWCASE) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 gap-4 reveal">
-          <div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Featured This Week</h2>
-            <p class="text-secondary-text text-base sm:text-lg">New arrivals and seasonal favourites, restocked daily.</p>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-14 gap-4 reveal">
+          <div class="max-w-2xl text-start">
+            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-2 inline-block">Direct From Growers</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2">Featured This Week</h2>
+            <p class="text-secondary-text text-sm sm:text-base">Limited harvest batches and morning-baked staples restocked daily at dawn.</p>
           </div>
-          <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">View All Products</a>
+          <a href="shop.html" class="btn-outline px-5 sm:px-6 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap inline-flex items-center gap-2">
+            View All Products <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-              <img src="assets/ho1.jpg" alt="Honeycrisp Apples" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-              <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">NEW</span>
+        <!-- Editorial Split Layout: 1 Hero Visual Tasting Card + 3 Detailed Rows -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch reveal">
+          <!-- Featured Spotlight (5 cols) -->
+          <div class="lg:col-span-5 relative rounded-3xl overflow-hidden border border-border group bg-hover min-h-[380px] sm:min-h-[460px] flex flex-col justify-between p-6 sm:p-8">
+            <img src="assets/ho1.jpg" alt="Honeycrisp Apples" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+            
+            <!-- Top Badges -->
+            <div class="relative z-10 flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                <i class="fa-solid fa-sparkles text-[10px]"></i> SEASON'S BEST
+              </span>
+              <span class="text-xs font-semibold text-white/90 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">Organic Certified</span>
             </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Honeycrisp Apples</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Sweet & Juicy</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$3.49</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
+
+            <!-- Bottom Story -->
+            <div class="relative z-10 space-y-3">
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">Honeycrisp Mountain Apples</h3>
+              <p class="text-white/85 text-xs sm:text-sm leading-relaxed">
+                Extra snappy flesh with a delicate balance of cider-sweet sugars and gentle tang. Grown at 1,200ft elevation.
+              </p>
+              <div class="flex items-center justify-between pt-2 border-t border-white/20">
+                <span class="text-accent text-2xl font-black">$3.49 <span class="text-xs text-white/70 font-normal">/ 1kg</span></span>
+                <button class="bg-white text-green-700 hover:bg-accent hover:text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 transition-all shadow-md">
+                  <i class="fa-solid fa-cart-plus text-xs"></i> Add to Cart
                 </button>
               </div>
             </div>
           </div>
 
-          <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-             <img src="assets/ho2.jpg"  alt="Wild Flower Honey" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Wild Flower Honey</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Raw & Unfiltered</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$11.50</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
+          <!-- 3 Editorial Horizontal Product Strips (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col justify-between gap-4">
+            <!-- Product 1: Wild Flower Honey -->
+            <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 hover:border-accent transition-all duration-300">
+              <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/ho2.jpg" alt="Wild Flower Honey" class="w-full h-full object-cover">
+                <span class="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full">RAW</span>
+              </div>
+              <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Apiary Reserve</span>
+                    <span class="text-xs font-semibold text-secondary-text">400g glass jar</span>
+                  </div>
+                  <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Unfiltered Wildflower Blossom Honey</h4>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Single-source raw honey rich with floral pollen enzymes from clover and wildflower pastures.</p>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                  <span class="text-accent font-extrabold text-lg sm:text-xl">$11.50</span>
+                  <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Add
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-              <img src="assets/ho3.jpg"  alt="Artisan Rye Loaf" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-              <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">FRESH</span>
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Artisan Rye Loaf</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Baked at 5 AM</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$5.40</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
+            <!-- Product 2: Artisan Rye Loaf -->
+            <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 hover:border-accent transition-all duration-300">
+              <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/ho3.jpg" alt="Artisan Rye Loaf" class="w-full h-full object-cover">
+                <span class="absolute top-2 left-2 bg-green-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">BAKED 5 AM</span>
+              </div>
+              <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Hearth Bakery</span>
+                    <span class="text-xs font-semibold text-secondary-text">650g loaf</span>
+                  </div>
+                  <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Traditional Dark Caraway Rye</h4>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Spelt-fermented rye dough studded with aromatic caraway seeds and baked on stone hearths.</p>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                  <span class="text-accent font-extrabold text-lg sm:text-xl">$5.40</span>
+                  <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Add
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="bg-background rounded-2xl border border-border overflow-hidden card-hover reveal h-full flex flex-col">
-            <div class="h-36 sm:h-48 overflow-hidden relative">
-             <img src="assets/ho4.jpg"  alt="Greek Yogurt" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-3 sm:p-5 flex flex-col flex-grow">
-              <h4 class="font-bold text-primary-text text-sm sm:text-base mb-1 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">Greek Yogurt</h4>
-              <p class="text-xs sm:text-sm text-secondary-text mb-3">Plain · 500g tub</p>
-              <div class="flex items-center justify-between mt-auto">
-                <span class="text-accent font-bold text-base sm:text-lg">$5.90</span>
-                <button class="w-8 h-8 rounded-full bg-hover border border-border flex items-center justify-center text-accent hover:bg-accent hover:text-white transition" title="Add to cart">
-                  <i class="fa-solid fa-plus text-xs"></i>
-                </button>
+            <!-- Product 3: Greek Yogurt -->
+            <div class="bg-background rounded-2xl border border-border p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 hover:border-accent transition-all duration-300">
+              <div class="w-full sm:w-36 h-36 rounded-xl overflow-hidden shrink-0 border border-border relative">
+                <img src="assets/ho4.jpg" alt="Greek Yogurt" class="w-full h-full object-cover">
+                <span class="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full">PROBIOTIC</span>
+              </div>
+              <div class="flex-1 w-full text-start flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Small Batch Dairy</span>
+                    <span class="text-xs font-semibold text-secondary-text">500g tub</span>
+                  </div>
+                  <h4 class="font-bold text-primary-text text-base sm:text-lg mb-1">Triple-Strained Greek Whole Yogurt</h4>
+                  <p class="text-secondary-text text-xs sm:text-sm leading-relaxed mb-3">Velvety thick texture with live active cultures and zero added thickeners or stabilizers.</p>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-border/60">
+                  <span class="text-accent font-extrabold text-lg sm:text-xl">$5.90</span>
+                  <button class="btn-primary px-4 py-2 rounded-lg font-bold text-xs inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus text-[10px]"></i> Add
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── SECTION 6: PROMISE (4-COLUMN) ─── -->
+      <!-- ─── SECTION 6: PROMISE (INTEGRATED EDITORIAL SPLIT) ─── -->
       <section class="py-12 sm:py-20 lg:py-24 bg-hover border-y border-border">
         <div class="px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1600px] mx-auto">
-          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
-            <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-3 inline-block">Our Promise</span>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-3 sm:mb-4">Four Commitments We Keep</h2>
-            <p class="text-secondary-text text-base sm:text-lg">No exceptions. No excuses. Just our word.</p>
-          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center reveal">
+            <!-- Left Header & Keynote (5 cols) -->
+            <div class="lg:col-span-5 space-y-4 text-start">
+              <span class="text-accent font-bold text-xs sm:text-sm tracking-[0.25em] uppercase mb-1 inline-block">Integrity In Every Order</span>
+              <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-primary-text leading-tight">
+                Four Commitments<br/>
+                <span class="text-accent">We Never Compromise.</span>
+              </h2>
+              <p class="text-secondary-text text-sm sm:text-base leading-relaxed">
+                Whether you order a single bunch of parsley or full pantry supplies for the month, our promises stand firm.
+              </p>
+              <div class="pt-2">
+                <a href="about.html" class="btn-outline px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2">
+                  Learn How We Source <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+              </div>
+            </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-              <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-                <i class="fa-solid fa-shield-halved text-2xl"></i>
+            <!-- Right: 4 Distinct Modular Value Rows (7 cols) -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-background rounded-2xl border border-border p-5 sm:p-6 shadow-sm hover:border-accent transition-all">
+                <div class="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl mb-4">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1.5">Freshness Guarantee</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">If anything arrives bruised or wilted, get an instant in-app credit or replacement.</p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Freshness Guarantee</h3>
-              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Not fresh? We replace it or refund you instantly — no questions asked.</p>
-            </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-              <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-                <i class="fa-solid fa-stopwatch text-2xl"></i>
+
+              <div class="bg-background rounded-2xl border border-border p-5 sm:p-6 shadow-sm hover:border-accent transition-all">
+                <div class="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl mb-4">
+                  <i class="fa-solid fa-stopwatch"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1.5">30-Minute Windows</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Live GPS driver tracking and guaranteed slots so you never wait around.</p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">On-Time Delivery</h3>
-              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Every delivery window is honoured. Late order? Your next fee is on us.</p>
-            </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-              <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-                <i class="fa-solid fa-tag text-2xl"></i>
+
+              <div class="bg-background rounded-2xl border border-border p-5 sm:p-6 shadow-sm hover:border-accent transition-all">
+                <div class="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl mb-4">
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1.5">Honest Shelf Pricing</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Zero hidden baggage fees or peak hour price multipliers. Transparent checkout always.</p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Honest Pricing</h3>
-              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">No surge fees, no last-minute charges, no surprises. Ever.</p>
-            </div>
-            <div class="promise-card h-full flex flex-col bg-background p-5 sm:p-8 rounded-2xl border border-border shadow-sm reveal flex flex-col h-full">
-              <div class="promise-icon w-14 h-14 rounded-2xl bg-hover border border-border flex items-center justify-center mb-5 text-accent">
-                <i class="fa-solid fa-headset text-2xl"></i>
+
+              <div class="bg-background rounded-2xl border border-border p-5 sm:p-6 shadow-sm hover:border-accent transition-all">
+                <div class="w-11 h-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl mb-4">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-primary-text text-base mb-1.5">Local Store Dispatch</h3>
+                <p class="text-secondary-text text-xs sm:text-sm leading-relaxed">Need custom cuts or ripeness preferences? Our pickers text you directly.</p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-primary-text mb-2 line-clamp-2 min-h-[3rem] sm:min-h-[3.5rem]">Human Support</h3>
-              <p class="text-secondary-text text-sm sm:text-base leading-relaxed flex-grow">Real people, always reachable. Avg reply time: under 2 hours.</p>
             </div>
           </div>
         </div>
